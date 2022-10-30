@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import AddPet from "../components/AddTask";
+
  
 
 
@@ -15,14 +15,14 @@ function PetDetailsPage (props) {
 
    // Helper function that makes a GET request to the API
   // and retrieves the project by id
-  const getPet = () => {          //  <== ADD A NEW FUNCTION
+  const getPet = () => {          
      // Get the token from the localStorage
   const storedToken = localStorage.getItem("authToken");
  
   // Send the token through the request "Authorization" Headers
   axios
     .get(
-      `${API_URL}/api/projects/${petId}`,
+      `${API_URL}/api/pets/${petId}`,
       { headers: { Authorization: `Bearer ${storedToken}` } }
     )
     .then((response) => {
@@ -33,21 +33,20 @@ function PetDetailsPage (props) {
   };
   
   
-  useEffect(()=> {                   // <== ADD AN EFFECT
+  useEffect(()=> {                  
     getPet();
   }, [] );
  
   
   return (
     <div className="PetDetails">
-      {pet && (
         <>
           <h1>{pet.name}</h1>
           <p>{pet.description}</p>
         </>
-      )}
+      
 
-      <Link to="/projects">
+      <Link to="/pets">
         <button>Back to pets</button>
       </Link>
 

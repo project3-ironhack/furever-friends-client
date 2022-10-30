@@ -4,17 +4,19 @@ import axios from "axios";
 const API_URL = "http://localhost:5005";
  
 function AddPet(props) {
-  const [name, setName] = useState("");
-  const [birthday, setBirthday] = useState("");
-  const [ageType, setAgeType] = useState("");
-  const [description, setDescription] = useState("");
-  const [weight, setWeight] = useState("");
-  const [petFriendly, setPetFriendly] = useState("");
-  const [kidFriendly, setKidFriendly] = useState("");
-  const [furLength, setFurLength] = useState("");
-  const [location, setLocation] = useState("");
-//   const [isNeutered, setIsNeutered] = useState("");
-const [image, setImage] = useState("");
+    const [name, setName] = useState("");
+    const [birthday, setBirthday] = useState("");
+    const [ageType, setAgeType] = useState("");
+    const [description, setDescription] = useState("");
+    const [weight, setWeight] = useState("");
+    const [petFriendly, setPetFriendly] = useState("");
+    const [kidFriendly, setKidFriendly] = useState("");
+    const [furLength, setFurLength] = useState("");
+    const [location, setLocation] = useState("");
+    const [isNeutered, setIsNeutered] = useState("");
+    const [isVaccinated, setIsVaccinated] = useState("");
+    const [image, setImage] = useState("");
+    const [typeOfPet, setTypeOfPet] = ("");
 
 
 
@@ -26,7 +28,19 @@ const [image, setImage] = useState("");
     const requestBody = { 
         petName: name, 
         birthday,
-        description };
+        description, 
+        weight,
+        petFriendly,
+        kidFriendly,
+        furLength,
+        location,
+        isNeutered, 
+        isVaccinated,
+        image, 
+        typeOfPet
+     };
+     
+    //  console.log(requestBody.isVaccinated);
    
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');
@@ -49,9 +63,13 @@ const [image, setImage] = useState("");
       setKidFriendly("");
       setFurLength("");
       setLocation("");
-    //   setIsNeutered("");
+      setIsNeutered("");
+      setIsVaccinated("");
       setImage("");
+      setTypeOfPet("");
       props.refreshPets();
+    
+
 
     })
       .catch((error) => console.log(error));
@@ -61,6 +79,18 @@ const [image, setImage] = useState("");
   return (
     <div className="AddPet">
       <h3>Add Pet</h3>
+
+      <label>Choose an animal:</label>
+        <select type="string"
+                name="typeOfPet"
+                value={typeOfPet}
+                onChange={(e) => setTypeOfPet(e.target.value)} >
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+        </select>
+
+
+
 
       <label>Image:</label>
         <input
@@ -138,25 +168,49 @@ const [image, setImage] = useState("");
             <option value="furless">Furless</option>
         </select>
 
-        {/* <div className="radios">
+        <div className="radios">
         <p>Neutered:</p>
-          <input 
-        type="radio" 
-        name="is_neutered"
-        value={isNeutered.true}
-        checked={ }
-        onChange={(e) => setIsNeutered(e.target.value)}
-        >
-          <label for="html">Yes</label>
         
+        <label>Yes
           <input 
         type="radio" 
-        name="not_neutered"
-        value={isNeutered.false}
-        onChange={(e) => setIsNeutered(e.target.value)}
-        >
-          <label for="css">No</label><br>
-        </div> */}
+        name="isNeutered"
+        value={true}
+        onChange={(e) => setIsNeutered(true)}
+        />
+         </label>
+        
+        <label>No
+          <input 
+        type="radio" 
+        name="isNeutered"
+        value={false}
+        onChange={(e) => setIsNeutered(false)}
+        />
+        </label>
+        </div> 
+
+        <div className="radios">
+        <p>Vaccination:</p>
+        
+        <label>Yes
+          <input 
+        type="radio" 
+        name="isVaccinated"
+        value={true}
+        onChange={(e) => setIsVaccinated(true)}
+        />
+         </label>
+        
+        <label >No
+          <input 
+        type="radio" 
+        name="isVaccinated"
+        value={false}
+        onChange={(e) => setIsVaccinated(false)}
+        />
+        </label>
+        </div> 
 
         
         
