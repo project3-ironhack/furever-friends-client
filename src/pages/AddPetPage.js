@@ -3,7 +3,7 @@ import axios from "axios";
  
 const API_URL = "http://localhost:5005";
  
-function AddPet(props) {
+function AddPetPage(props) {
     const [name, setName] = useState("");
     const [sex, setSex] = useState("");
     const [birthday, setBirthday] = useState("");
@@ -19,6 +19,7 @@ function AddPet(props) {
     const [image, setImage] = useState("");
     const [typeOfPet, setTypeOfPet] = ("");
     const [catRace, setCatRace] = ("");
+    const [dogRace, setDogRace] = ("");
      
 
 
@@ -42,7 +43,8 @@ function AddPet(props) {
         isVaccinated,
         image, 
         typeOfPet,
-        catRace
+        catRace,
+        dogRace
      };
      
     //  console.log(requestBody.isVaccinated);
@@ -74,6 +76,7 @@ function AddPet(props) {
       setImage("");
       setTypeOfPet("");
       setCatRace("");
+      setDogRace("");
       props.refreshPets();
     
 
@@ -95,9 +98,6 @@ function AddPet(props) {
             <option value="cat">Cat</option>
             <option value="dog">Dog</option>
         </select>
-
-
-
 
       <label>Image:</label>
         <input
@@ -247,18 +247,9 @@ function AddPet(props) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-{/* 
 
-         <label>Cat breed:</label>
-      
-        <select type="string"
-                name="catRace"
-                value={catRace.enum}
-                onChange={(e) => setCatRace(e.target.value)} >
-                 {catRace.enum.map((breed) => (
-                    <option value="">{breed}</option> 
-                    ))}  
-        </select>  */}
+
+         
 
 
 
@@ -270,4 +261,4 @@ function AddPet(props) {
   );
 }
  
-export default AddPet;
+export default AddPetPage;

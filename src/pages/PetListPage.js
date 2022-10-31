@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import AddPet from "../components/AddPet"; 
 import PetCard from "../components/PetCard";
 
 const API_URL = "http://localhost:5005";
@@ -30,8 +29,6 @@ function PetListPage() {
   return (
     <div className="PetListPage">
      <h1>Pet List Page</h1>
-      
-      <AddPet refreshProjects={getAllPets} />
 
       { pets.map((pet) => (
         <PetCard key={pet._id} {...pet} />

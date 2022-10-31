@@ -41,7 +41,9 @@ function PetDetailsPage (props) {
          {(pet !== null) && <>
 
           <img src="{pet.image}" />
-          <h1>{pet.petName}</h1>
+          <h1>My name is {pet.petName}!</h1>
+
+          <h2>Facts about me</h2>
           <p>Sex: {pet.sex}</p>
           <p>Birthday: {pet.birthday}</p>
           <p><span>Age Category:</span> {pet.ageType}</p>
@@ -51,9 +53,15 @@ function PetDetailsPage (props) {
           <p><span>Fur Length:</span> {pet.furLength}</p>
           <p><span>Neutered:</span> {pet.isNeutered}</p>
           <p><span>Vaccination:</span> {pet.isVaccinated}</p>   
-          <p><span>Location:</span> {pet.location}</p>
-          <p><span>Adoption with:</span> {pet.adoptionWith}</p>
-          <p><span>Description:</span> {pet.description}</p>
+          
+
+          <h2>My story</h2>
+          <p>{pet.description}</p>
+
+          <h2>Location</h2> 
+          <p>{pet.location}</p>
+          <h2>Adoption with</h2>
+          <p>{pet.adoptionWith}</p>
         
       
 
@@ -63,6 +71,10 @@ function PetDetailsPage (props) {
 
       <Link to={`/pets/edit/${petId}`}>
         <button>Edit Pet</button>
+      </Link>  
+
+      <Link to={``}>
+        <button>Ask about me</button>
       </Link>  
          </>}
       

@@ -23,6 +23,10 @@ function Navbar() {
       <Link to="/pets">
         <button>Pets</button>
       </Link>
+
+      <Link to="/pets/add-pet">
+        <button>Add pet</button>
+      </Link>
  
       {/*    If login, button logout showing  */}
       {isLoggedIn && (
