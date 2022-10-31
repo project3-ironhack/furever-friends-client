@@ -5,6 +5,8 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar"; 
 // import AddPet from "./components/AddPet"; 
 // import IsPrivate from "./components/IsPrivate"; 
+import AddAssociation from './components/AddAssociation';
+import AddAdopter from './components/AddAdopter';
 
 // Pages
 import HomePage from "./pages/HomePage"; 
