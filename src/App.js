@@ -5,17 +5,16 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar"; 
 // import AddPet from "./components/AddPet"; 
 // import IsPrivate from "./components/IsPrivate"; 
-//import AddAssociation from './components/AddAssociation';
-//import AddAdopter from './components/AddAdopter';
 
 // Pages
 import HomePage from "./pages/HomePage"; 
 import AboutPage from "./pages/AboutPage";
 import PetListPage from "./pages/PetListPage";
 import PetDetailsPage from "./pages/PetDetailsPage";
-// import EditPetPage from "./pages/EditPetPage";
+import EditPetPage from "./pages/EditPetPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import AddPetPage from "./pages/AddPetPage";
 
 
 
@@ -30,14 +29,15 @@ function App() {
       <Route path='/' element={ <HomePage />} />
       <Route path='/about' element={ <AboutPage />} />
       <Route path='/pets' element={ <PetListPage />} />
+      <Route path='/pets/add-pet' element={<AddPetPage/>}/>
       <Route path='/pets/:petId' element={<PetDetailsPage/>}/>
-      
+      <Route path='/pets/edit/:petId' element={<EditPetPage/>}/>
+     
 
 
 
-      <Route 
-        path="/signup" 
-        element={<SignupPage /> } />
+
+      <Route path="/signup" element={ <SignupPage /> } />
       <Route path="/login" element={ <LoginPage /> } />
 
     </Routes> 
@@ -48,3 +48,4 @@ function App() {
 }
 
 export default App;
+
