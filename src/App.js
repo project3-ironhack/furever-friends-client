@@ -10,7 +10,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage"; 
 import AboutPage from "./pages/AboutPage";
 import PetListPage from "./pages/PetListPage";
-// import PetDetailsPage from "./pages/PetDetailsPage";
+import PetDetailsPage from "./pages/PetDetailsPage";
 // import EditPetPage from "./pages/EditPetPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
@@ -28,6 +28,8 @@ function App() {
       <Route path='/' element={ <HomePage />} />
       <Route path='/about' element={ <AboutPage />} />
       <Route path='/pets' element={ <PetListPage />} />
+      <Route path='/pets/:petId' element={<PetDetailsPage/>}/>
+      
 
 
 

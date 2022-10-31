@@ -5,6 +5,7 @@ const API_URL = "http://localhost:5005";
  
 function AddPet(props) {
     const [name, setName] = useState("");
+    const [sex, setSex] = useState("");
     const [birthday, setBirthday] = useState("");
     const [ageType, setAgeType] = useState("");
     const [description, setDescription] = useState("");
@@ -17,16 +18,19 @@ function AddPet(props) {
     const [isVaccinated, setIsVaccinated] = useState("");
     const [image, setImage] = useState("");
     const [typeOfPet, setTypeOfPet] = ("");
+    const [catRace, setCatRace] = ("");
+     
 
 
 
- 
+  
  
 
   const handleSubmit = (e) => {                         
     e.preventDefault();
     const requestBody = { 
         petName: name, 
+        sex,
         birthday,
         description, 
         weight,
@@ -37,7 +41,8 @@ function AddPet(props) {
         isNeutered, 
         isVaccinated,
         image, 
-        typeOfPet
+        typeOfPet,
+        catRace
      };
      
     //  console.log(requestBody.isVaccinated);
@@ -55,6 +60,7 @@ function AddPet(props) {
       .then((response) => {
       // Reset the state
       setName("");
+      setSex("");
       setBirthday("");
       setAgeType("");
       setDescription("");
@@ -67,6 +73,7 @@ function AddPet(props) {
       setIsVaccinated("");
       setImage("");
       setTypeOfPet("");
+      setCatRace("");
       props.refreshPets();
     
 
@@ -108,6 +115,16 @@ function AddPet(props) {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+
+        <label>Age group*:</label>
+        <select type="string"
+                name="sex"
+                value={sex}
+                onChange={(e) => setAgeType(e.target.value)} >
+            <option value="">--Please choose an option--</option>
+            <option value="female">female</option>
+            <option value="male">Male</option>
+        </select>
 
         <label>Birthday:</label>
         <input
@@ -230,6 +247,22 @@ function AddPet(props) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
+{/* 
+
+         <label>Cat breed:</label>
+      
+        <select type="string"
+                name="catRace"
+                value={catRace.enum}
+                onChange={(e) => setCatRace(e.target.value)} >
+                 {catRace.enum.map((breed) => (
+                    <option value="">{breed}</option> 
+                    ))}  
+        </select>  */}
+
+
+
+
  
         <button type="submit">Submit</button>
       </form>
