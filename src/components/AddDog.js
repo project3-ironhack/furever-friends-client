@@ -4,12 +4,9 @@ import { useState, useEffect } from "react";
 // const API_URL = "http://localhost:5005";
 
 function AddDog(props) {
-    const [dogRace, setDogRace] = useState("");
-    const [size, setSize] = useState("");
-    
 
-    const handleDogRace = (e) => setDogRace(e.target.value);
-    const handleSize = (e) => setSize(e.target.value);
+    const handleDogRace = (e) => props.setDogRace(e.target.value);
+    const handleSize = (e) => props.setSize(e.target.value);
    
 
     const [dogRaces, setDogRaces] = useState(null);
@@ -35,16 +32,16 @@ function AddDog(props) {
   return (
     <div>
     <label for="dogRace">Dog breed</label>
-      <select id="dogRace">
+      <select id="dogRace" onChange={handleDogRace}>
         { dogRaces !== null && dogRaces.map((item) => 
-           <option key={dogRace}>{item}</option>
+           <option key={props.dogRace}>{item}</option>
         )}
       </select>
 
-      <label for="size">Dog breed</label>
-      <select id="size">
+      <label for="size">Dog size</label>
+      <select id="size" onChange={handleSize}>
         { sizes !== null && sizes.map((item) => 
-           <option key={size}>{item}</option>
+           <option key={props.size}>{item}</option>
         )}
       </select>
     </div>

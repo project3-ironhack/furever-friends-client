@@ -4,12 +4,8 @@ import { useState, useEffect } from "react";
 // const API_URL = "http://localhost:5005";
 
 function AddCat(props) {
-    const [catRace, setCatRace] = useState("");
     
-    
-
-    const handleCatRace = (e) => setCatRace(e.target.value);
-   
+  const handleCatRace = (e) => props.setCatRace(e.target.value);
 
     const [catRaces, setCatRaces] = useState(null);
 
@@ -26,9 +22,9 @@ function AddCat(props) {
   return (
     <div>
     <label for="catRace">Cat breed</label>
-      <select id="catRace">
+      <select id="catRace" onChange={handleCatRace}>
         { catRaces !== null && catRaces.map((item) => 
-           <option key={catRace}>{item}</option>
+           <option key={props.catRace}>{item}</option>
         )}
       </select>
     </div>
