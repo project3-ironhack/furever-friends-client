@@ -13,6 +13,18 @@ function SignupPage(props) {
   const [telephone, setTelephone] = useState("");
   const [city, setCity] = useState("");
   const [type, setType] = useState("");
+
+  // lifting state up from AddAdopter
+  const [home, setHome] = useState("apartment");
+  const [yardAccess, setYardAccess] = useState("false");
+  const [hasKids, setHasKids] = useState("false");
+  const [hasPets, setHasPets] = useState("no");
+
+  // lifting state up from AddAssociation
+  const [website, setWebsite] = useState("");
+  const [associationType, setAssociationType] = useState("rescue group");
+  const [image, setImage] = useState("");
+
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
@@ -34,8 +46,15 @@ function SignupPage(props) {
       telephone,
       city,
       type,
+      home,
+      yardAccess,
+      hasKids,
+      hasPets,
+      website,
+      associationType,
+      image,
     };
-
+    
     // Make an axios request to the API
     // If POST request is successful redirect to login page
     // If the request resolves with an error, set the error message in the state
@@ -103,7 +122,25 @@ function SignupPage(props) {
           />
         </div> 
 
-        {type === 'adopter' ? <AddAdopter /> : <AddAssociation />} 
+        {type === 'adopter' ?
+          <AddAdopter
+            home={home}
+            setHome={setHome}
+            yardAccess={yardAccess}
+            setYardAccess={setYardAccess}
+            hasKids={hasKids}
+            setHasKids={setHasKids}
+            hasPets={hasPets}
+            setHasPets={setHasPets} 
+          /> :
+          <AddAssociation
+            website={website}
+            setWebsite={setWebsite}
+            associationType={associationType}
+            setAssociationType={setAssociationType}
+            image={image}
+            setImage={setImage}
+          />} 
 
         <button type="submit">Sign up</button>
       </form>

@@ -4,21 +4,20 @@ import axios from "axios";
 // const API_URL = "http://localhost:5005";
 
 function AddAssociation(props) {
-  const [website, setWebsite] = useState("");
-  const [associationType, setAssociationType] = useState("");
-  const [image, setImage] = useState("");
-
+  
   const [associations, setAssociations] = useState(null);
 
-  const handleWebsite = (e) => setWebsite(e.target.value);
-  const handleAssociationType = (e) => setAssociationType(e.target.value);
-  const handleImage = (e) => setImage(e.target.value);
+  const handleWebsite = (e) => props.setWebsite(e.target.value);
+  const handleAssociationType = (e) => props.setAssociationType(e.target.value);
+  const handleImage = (e) => props.setImage(e.target.value);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/auth/signup/associationtype`).then((response) => {
-      setAssociations(response.data);
-    });
-  }, []);
+    axios
+        .get(`${process.env.REACT_APP_API_URL}/auth/signup/associationtype`)
+        .then((response) => {
+            setAssociations(response.data);
+        });
+    }, []);
 
   return (
     <div>
@@ -27,14 +26,18 @@ function AddAssociation(props) {
         id="website"
         type="text"
         name="website"
-        value={website}
+        value={props.website}
         onChange={handleWebsite}
       />
       <label for="association">What kind of association are you?</label>
-      <select id="association">
+      <select id="association"
+        onChange={handleAssociationType}
+        name="associationType"
+        value={props.associationType}
+      >
         {associations !== null &&
           associations.map((item) => (
-            <option key={associationType}>{item}</option>
+            <option key={props.associationType}>{item}</option>
           ))}
       </select>
       <label for="image">Association image:</label>
@@ -42,7 +45,7 @@ function AddAssociation(props) {
         id="image"
         type="text"
         name="image"
-        value={image}
+        value={props.image}
         onChange={handleImage}
       />
     </div>
