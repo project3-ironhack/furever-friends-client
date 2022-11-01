@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
 
 function AddAdopter(props) {
     const [home, setHome] = useState("");
@@ -20,7 +20,7 @@ function AddAdopter(props) {
 
     useEffect(() => {
         axios
-        .get(`${API_URL}/auth/signup/home`)
+        .get(`${process.env.REACT_AOO_API_URL}/auth/signup/home`)
         .then((response) => {
             setHomes(response.data);
         })  
@@ -28,7 +28,7 @@ function AddAdopter(props) {
 
     useEffect(() => {
         axios
-        .get(`${API_URL}/auth/signup/haspets`)
+        .get(`${process.env.REACT_APP_API_URL}/auth/signup/haspets`)
         .then((response) => {
             setPets(response.data);
         })  

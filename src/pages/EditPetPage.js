@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom"; 
  
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
  
 function EditPetPage(props) {
   const [petName, setPetName] = useState("");
@@ -18,7 +18,7 @@ function EditPetPage(props) {
   
  useEffect(() => {                                  // <== ADD
     axios
-      .get(`${API_URL}/api/pets/${petId}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/pets/${petId}`)
       .then((response) => {
         /* 
           We update the state with the project data coming from the response.
@@ -40,7 +40,7 @@ function EditPetPage(props) {
  
     // Make a PUT request to update the project
     axios
-      .put(`${API_URL}/api/pets/${petId}`, requestBody)
+      .put(`${process.env.REACT_APP_API_URL}/api/pets/${petId}`, requestBody)
       .then((response) => {
         // Once the request is resolved successfully and the project
         // is updated we navigate back to the details page
@@ -52,7 +52,7 @@ function EditPetPage(props) {
   const deletePet = () => {                    
     // Make a DELETE request to delete the project
     axios
-      .delete(`${API_URL}/api/pets/${petId}`)
+      .delete(`${process.env.REACT_APP_API_URL}/api/pets/${petId}`)
       .then(() => {
         // Once the delete request is resolved successfully
         // navigate back to the list of projects.

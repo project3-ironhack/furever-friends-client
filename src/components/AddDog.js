@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
 
 function AddDog(props) {
     const [dogRace, setDogRace] = useState("");
@@ -18,7 +18,7 @@ function AddDog(props) {
 
     useEffect(() => {
         axios
-        .get(`${API_URL}/api/dogs/breeds`)
+        .get(`${process.env.REACT_APP_API_URL}/api/dogs/breeds`)
         .then((response) => {
             setDogRaces(response.data);
         })  
@@ -26,7 +26,7 @@ function AddDog(props) {
 
     useEffect(() => {
         axios
-        .get(`${API_URL}/api/dogs/sizes`)
+        .get(`${process.env.REACT_APP_API_URL}/api/dogs/sizes`)
         .then((response) => {
             setSizes(response.data);
         })  

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
 
 function AddCat(props) {
     const [catRace, setCatRace] = useState("");
@@ -16,7 +16,7 @@ function AddCat(props) {
 
     useEffect(() => {
         axios
-        .get(`${API_URL}/api/cats/breeds`)
+        .get(`${process.env.REACT_APP_API_URL}/api/cats/breeds`)
         .then((response) => {
             setCatRaces(response.data);
         })  

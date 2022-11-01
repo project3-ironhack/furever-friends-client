@@ -3,7 +3,7 @@ import axios from "axios";
 
 import PetCard from "../components/PetCard";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
 
 function PetListPage() {
   const [pets, setPets] = useState([]);
@@ -14,7 +14,7 @@ function PetListPage() {
 
   axios
     .get(
-    `${API_URL}/api/pets`,
+    `${process.env.REACT_APP_API_URL}/api/pets`,
     { headers: { Authorization: `Bearer ${storedToken}` } }
   )
     .then((response) => setPets(response.data))

@@ -4,7 +4,7 @@ import axios from "axios";
 import AddDog from "../components/AddDog";
 import AddCat from "../components/AddCat";
  
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
  
 function AddPetPage(props) {
     const [name, setName] = useState("");
@@ -58,7 +58,7 @@ function AddPetPage(props) {
     // Send the token through the request "Authorization" Headers
     axios
       .post(
-      `${API_URL}/api/pets`, requestBody)
+      `${process.env.REACT_APP_API_URL}/api/pets`, requestBody)
       .then((response) => {
       // Reset the state
       setName("");

@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
  
 
 
-const API_URL = "http://localhost:5005";  
+// const API_URL = "http://localhost:5005";  
  
  
 function PetDetailsPage (props) {
@@ -20,7 +20,7 @@ function PetDetailsPage (props) {
 
   axios
     .get(
-      `${API_URL}/api/pets/${petId}`,
+      `${process.env.REACT_APP_API_URL}/api/pets/${petId}`,
       // { headers: { Authorization: `Bearer ${storedToken}` } }
     )
     .then((response) => {

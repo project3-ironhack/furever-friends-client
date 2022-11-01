@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
 
 function AddAssociation(props) {
   const [website, setWebsite] = useState("");
@@ -15,7 +15,7 @@ function AddAssociation(props) {
   const handleImage = (e) => setImage(e.target.value);
 
   useEffect(() => {
-    axios.get(`${API_URL}/auth/signup/associationtype`).then((response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/auth/signup/associationtype`).then((response) => {
       setAssociations(response.data);
     });
   }, []);
