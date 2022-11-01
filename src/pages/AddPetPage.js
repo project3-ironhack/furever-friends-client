@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import AddDog from "../components/AddDog";
+import AddCat from "../components/AddCat";
  
 const API_URL = "http://localhost:5005";
  
@@ -20,6 +23,7 @@ function AddPetPage(props) {
     const [typeOfPet, setTypeOfPet] = ("");
     const [catRace, setCatRace] = ("");
     const [dogRace, setDogRace] = ("");
+    const [errorMessage, setErrorMessage] = useState(undefined);
      
 
 
@@ -49,16 +53,12 @@ function AddPetPage(props) {
      
     //  console.log(requestBody.isVaccinated);
    
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');
+  
    
     // Send the token through the request "Authorization" Headers
     axios
       .post(
-      `${API_URL}/api/pets`,
-      requestBody,
-      { headers: { Authorization: `Bearer ${storedToken}` } }
-    )
+      `${API_URL}/api/pets`, requestBody)
       .then((response) => {
       // Reset the state
       setName("");
@@ -82,22 +82,16 @@ function AddPetPage(props) {
 
 
     })
-      .catch((error) => console.log(error));
+    .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      });
   };
 
 
   return (
     <div className="AddPet">
       <h3>Add Pet</h3>
-
-      <label>Choose an animal:</label>
-        <select type="string"
-                name="typeOfPet"
-                value={typeOfPet}
-                onChange={(e) => setTypeOfPet(e.target.value)} >
-            <option value="cat">Cat</option>
-            <option value="dog">Dog</option>
-        </select>
 
       <label>Image:</label>
         <input
@@ -115,6 +109,28 @@ function AddPetPage(props) {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+
+
+        <div id="radios">
+          Choose an animal*
+          <label>Cat</label>
+          <input 
+            type="radio" 
+            name="typeOfPet"
+            value={'cat'}
+            onChange={(e) => setTypeOfPet('cat')}
+          />
+        <label>Dog</label>
+          <input 
+            type="radio" 
+            name="typeOfPet"
+            value={'dog'}
+            onChange={(e) => setTypeOfPet('dog')}
+          />
+        </div> 
+
+        {typeOfPet === 'cat' ? <AddCat /> : <AddDog />} 
+
 
         <label>Age group*:</label>
         <select type="string"
@@ -249,13 +265,9 @@ function AddPetPage(props) {
         />
 
 
-         
-
-
-
-
- 
         <button type="submit">Submit</button>
+
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>
     </div>
   );
