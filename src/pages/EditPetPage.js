@@ -162,7 +162,6 @@ console.log(sex)
             setSize={setSize}
           />
         }
-
         <label>Sex:</label>
           <select
             id="sex"
