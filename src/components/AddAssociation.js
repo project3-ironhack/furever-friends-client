@@ -35,6 +35,7 @@ function AddAssociation(props) {
         name="associationType"
         value={props.associationType}
       >
+      <option value="">--Please choose an option--</option>
         {associations !== null &&
           associations.map((item) => (
             <option key={props.associationType}>{item}</option>

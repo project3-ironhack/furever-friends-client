@@ -14,7 +14,7 @@ function AddAdopter(props) {
 
     useEffect(() => {
         axios
-        .get(`${process.env.REACT_AOO_API_URL}/auth/signup/home`)
+        .get(`${process.env.REACT_APP_API_URL}/auth/signup/home`)
         .then((response) => {
             setHomes(response.data);
         })  
@@ -32,6 +32,7 @@ function AddAdopter(props) {
     <div>
     <label htmlFor="home">What kind of home do you live in?</label>
       <select id="home" onChange={handleHome}>
+      <option value="">--Please choose an option--</option>
         {homes !== null && homes.map((item) => 
            <option key={props.home}>{item}</option>
         )}
@@ -54,6 +55,7 @@ function AddAdopter(props) {
       />
       <label htmlFor="pets">Do you already have any pets?</label>
       <select id="pets" onChange={handleHasPets} value={props.hasPets}>
+      <option value="">--Please choose an option--</option>
         {pets !== null && pets.map((item) => 
            <option key={props.hasPets}>{item}</option>
         )}
