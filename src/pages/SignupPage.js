@@ -15,14 +15,14 @@ function SignupPage(props) {
   const [type, setType] = useState("");
 
   // lifting state up from AddAdopter
-  const [home, setHome] = useState("apartment");
+  const [home, setHome] = useState("");
   const [yardAccess, setYardAccess] = useState("false");
   const [hasKids, setHasKids] = useState("false");
-  const [hasPets, setHasPets] = useState("no");
+  const [hasPets, setHasPets] = useState("");
 
   // lifting state up from AddAssociation
   const [website, setWebsite] = useState("");
-  const [associationType, setAssociationType] = useState("rescue group");
+  const [associationType, setAssociationType] = useState("");
   const [image, setImage] = useState("");
 
   const [errorMessage, setErrorMessage] = useState(undefined);
