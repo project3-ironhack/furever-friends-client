@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AddDog from "../components/AddDog";
 import AddCat from "../components/AddCat";
@@ -7,7 +7,7 @@ import AddCat from "../components/AddCat";
 
  
 function AddPetPage(props) {
-    const [petName, setName] = useState("");
+    const [petName, setPetName] = useState("");
     const [sex, setSex] = useState("");
     const [birthday, setBirthday] = useState("");
     const [ageType, setAgeType] = useState("");
@@ -20,13 +20,13 @@ function AddPetPage(props) {
     const [isNeutered, setIsNeutered] = useState("");
     const [isVaccinated, setIsVaccinated] = useState("");
     const [image, setImage] = useState("");
-    const [typeOfPet, setTypeOfPet] = ("");
-    const [catRace, setCatRace] = ("");
-    const [dogRace, setDogRace] = ("");
+    const [typeOfPet, setTypeOfPet] = useState("");
+    const [catRace, setCatRace] = useState("");
+    const [dogRace, setDogRace] = useState("");
     const [size, setSize] = useState("");
     const [errorMessage, setErrorMessage] = useState(undefined);
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     
 
   const handleSubmit = (e) => {                         
@@ -47,10 +47,12 @@ function AddPetPage(props) {
         typeOfPet,
         catRace,
         dogRace,
-        size
+        size,
+        ageType
+
      };
      
-    //  console.log(requestBody.isVaccinated);
+     console.log(requestBody);
    
   
    
@@ -59,8 +61,9 @@ function AddPetPage(props) {
       .post(
       `${process.env.REACT_APP_API_URL}/api/pets`, requestBody)
       .then((response) => {
+        navigate("/pets");
       // Reset the state
-      setName("");
+      setPetName("");
       setSex("");
       setBirthday("");
       setAgeType("");
@@ -107,12 +110,35 @@ function AddPetPage(props) {
           type="text"
           name="petName"
           value={petName}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setPetName(e.target.value)}
         />
 
 
+        <div id="radios">
+          Choose an animal*
+          <label>Cat</label>
+          <input 
+            type="radio" 
+            name="typeOfPet"
+            value={'cat'}
+            onChange={(e) => setTypeOfPet('cat')}
+          />
+        <label>Dog</label>
+          <input 
+            type="radio" 
+            name="typeOfPet"
+            value={'dog'}
+            onChange={(e) => setTypeOfPet('dog')}
+          />
+        </div> 
+
+        {typeOfPet === 'cat' && <AddCat catRace={catRace} setCatRace={setCatRace} /> }
+
+        {typeOfPet === 'dog' && <AddDog dogRace={dogRace} setDogRace={setDogRace} size={size} setSize={setSize}/>}
+
+
         <label>Sex*:</label>
-        <select id="sex"
+        <select type="string"
                 name="sex"
                 value={sex}
                 onChange={(e) => setSex(e.target.value)} >
@@ -130,7 +156,7 @@ function AddPetPage(props) {
         />
 
         <label>Age group*:</label>
-        <select id="ageType"
+        <select type="string"
                 name="ageType"
                 value={ageType}
                 onChange={(e) => setAgeType(e.target.value)} >
@@ -149,10 +175,11 @@ function AddPetPage(props) {
         />
 
         <label>Pet friendly:</label>
-        <select id="petFriendly"
+        <select type="string"
                 name="petFriendly"
                 value={petFriendly}
                 onChange={(e) => setPetFriendly(e.target.value)} >
+            <option value="">--Please choose an option--</option>
             <option value="unknown">Unknown</option>
             <option value="no other pets">No other pets</option>
             <option value="good with dogs">Good with dogs</option>
@@ -160,21 +187,23 @@ function AddPetPage(props) {
         </select>
 
         <label>Kid friendly:</label>
-        <select id="kidFriendly"
+        <select type="string"
                 name="kidFriendly"
                 value={kidFriendly}
                 onChange={(e) => setKidFriendly(e.target.value)} >
+            <option value="">--Please choose an option--</option>
             <option value="unknown">Unknown</option>
             <option value="good with kids">Good with kids</option>
             <option value="not good with kids">Not good with kids</option>
         </select>
 
         <label>Fur Length:</label>
-        <select id="furLength"
+        <select type="string"
                 name="furLength"
                 value={furLength}
                 onChange={(e) => setFurLength(e.target.value)} >
-             <option value="short">Short</option>
+            <option value="">--Please choose an option--</option>
+            <option value="short">Short</option>
             <option value="medium">Medium</option>
             <option value="long">Long</option>
             <option value="furless">Furless</option>
@@ -184,16 +213,16 @@ function AddPetPage(props) {
         <p>Neutered:</p>
         
         <label>Yes
-        <input 
+          <input 
         type="radio" 
         name="isNeutered"
         value={true}
         onChange={(e) => setIsNeutered(true)}
         />
-        </label>
+         </label>
         
         <label>No
-        <input 
+          <input 
         type="radio" 
         name="isNeutered"
         value={false}
@@ -206,16 +235,16 @@ function AddPetPage(props) {
         <p>Vaccination:</p>
         
         <label>Yes
-        <input 
+          <input 
         type="radio" 
         name="isVaccinated"
         value={true}
         onChange={(e) => setIsVaccinated(true)}
         />
-        </label>
+         </label>
         
         <label >No
-        <input 
+          <input 
         type="radio" 
         name="isVaccinated"
         value={false}
@@ -228,7 +257,7 @@ function AddPetPage(props) {
         
         <label>Location*:</label>
         <input
-          type="text"
+          type="string"
           name="location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
@@ -244,26 +273,7 @@ function AddPetPage(props) {
         />
 
 
-  <div id="radios">
-          Choose an animal*
-          <label>Cat</label>
-          <input 
-            type="radio" 
-            name="typeOfPet"
-            value={'cat'}
-            onChange={(e) => setTypeOfPet('cat')}
-          />
-        <label>Dog</label>
-          <input 
-            type="radio" 
-            name="typeOfPet"
-            value={'dog'}
-            onChange={(e) => setTypeOfPet('dog')}
-          />
-        </div> 
-
-{typeOfPet === 'cat' ? <AddCat catRace={catRace} setCatRace={setCatRace} /> : <AddDog dogRace={dogRace} setDogRace={setDogRace} size={size} setSize={setSize}/>} 
-
+ 
         <button type="submit">Submit</button>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}

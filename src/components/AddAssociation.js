@@ -21,7 +21,7 @@ function AddAssociation(props) {
 
   return (
     <div>
-      <label for="website">Association website:</label>
+      <label htmlFor="website">Association website:</label>
       <input
         id="website"
         type="text"
@@ -29,7 +29,7 @@ function AddAssociation(props) {
         value={props.website}
         onChange={handleWebsite}
       />
-      <label for="association">What kind of association are you?</label>
+      <label htmlFor="association">What kind of association are you?</label>
       <select id="association"
         onChange={handleAssociationType}
         name="associationType"
@@ -40,7 +40,7 @@ function AddAssociation(props) {
             <option key={props.associationType}>{item}</option>
           ))}
       </select>
-      <label for="image">Association image:</label>
+      <label htmlFor="image">Association image:</label>
       <input
         id="image"
         type="text"

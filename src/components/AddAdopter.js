@@ -30,13 +30,13 @@ function AddAdopter(props) {
 
   return (
     <div>
-    <label for="home">What kind of home do you live in?</label>
+    <label htmlFor="home">What kind of home do you live in?</label>
       <select id="home" onChange={handleHome}>
         {homes !== null && homes.map((item) => 
            <option key={props.home}>{item}</option>
         )}
       </select>
-      <label for="yard">Would a pet have yard access?</label>
+      <label htmlFor="yard">Would a pet have yard access?</label>
       <input
         id="yard"
         type="checkbox"
@@ -44,7 +44,7 @@ function AddAdopter(props) {
         value={props.yardAccess}
         onChange={handleYardAccess}
       />
-      <label for="kids">Do you have kids?</label>
+      <label htmlFor="kids">Do you have kids?</label>
       <input
         id="kids"
         type="checkbox"
@@ -52,7 +52,7 @@ function AddAdopter(props) {
         value={props.hasKids}
         onChange={handleHasKids}
       />
-      <label for="pets">Do you already have any pets?</label>
+      <label htmlFor="pets">Do you already have any pets?</label>
       <select id="pets" onChange={handleHasPets} value={props.hasPets}>
         {pets !== null && pets.map((item) => 
            <option key={props.hasPets}>{item}</option>

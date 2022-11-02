@@ -17,9 +17,8 @@ root.render(
      <App /> 
     </AuthProviderWrapper>
   </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
-  
+  </React.StrictMode>
+
 );
 
 

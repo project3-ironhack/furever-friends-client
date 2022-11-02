@@ -21,10 +21,11 @@ function AddCat(props) {
 
   return (
     <div>
-    <label for="catRace">Cat breed</label>
+    <label htmlFor="catRace">Cat breed</label>
       <select id="catRace" onChange={handleCatRace}>
+      <option value="">--Please choose an option--</option>
         { catRaces !== null && catRaces.map((item) => 
-           <option key={props.catRace}>{item}</option>
+           <option key={item}>{item}</option>
         )}
       </select>
     </div>
