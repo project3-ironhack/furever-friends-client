@@ -102,6 +102,7 @@ function AddPetPage(props) {
         <input
           type="text"
           name="image"
+          placeholder="add an image"
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
@@ -110,6 +111,7 @@ function AddPetPage(props) {
         <input
           type="text"
           name="petName"
+          placeholder="please add pet name"
           value={petName}
           onChange={(e) => setPetName(e.target.value)}
         />
@@ -167,7 +169,7 @@ function AddPetPage(props) {
             <option value="senior">Senior</option>
         </select>
 
-        <label>Weight:</label>
+        <label>Weight (kg):</label>
         <input
           type="number"
           name="weight"
@@ -261,6 +263,7 @@ function AddPetPage(props) {
         <input
           type="string"
           name="location"
+          placeholder="City name"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
@@ -270,6 +273,7 @@ function AddPetPage(props) {
         <textarea
           type="text"
           name="description"
+          placeholder="please describe the pet and their story"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
@@ -277,6 +281,7 @@ function AddPetPage(props) {
 
  
         <button type="submit">Submit</button>
+        <p>* are required fields for the form.</p>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>

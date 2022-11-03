@@ -127,10 +127,11 @@ function EditPetPage(props) {
       <h3>Edit a pet Profile</h3>
  
       <form onSubmit={handleFormSubmit}>
-        <label>Pet name:</label>
+        <label>Pet Name*:</label>
         <input
           type="text"
           name="petName"
+          placeholder="please add pet name"
           value={petName}
           onChange={(e) => setPetName(e.target.value)}
         />
@@ -138,6 +139,7 @@ function EditPetPage(props) {
           <input
             type="text"
             name="image"
+            placeholder="add an image"
             value={image}
             onChange={(e) => setImage(e.target.value)}
           />
@@ -171,7 +173,7 @@ function EditPetPage(props) {
             setSize={setSize}
           />
         }
-        <label>Sex:</label>
+        <label>Sex*:</label>
           <select
             id="sex"
             onChange={(e) => setSex(e.target.value)}
@@ -180,7 +182,7 @@ function EditPetPage(props) {
               <option value="male">Male</option>
             </select>
 
-        <label>Age group:</label>
+        <label>Age group*:</label>
           <select
             id="ageType"
             onChange={(e) => setAgeType(e.target.value)}
@@ -190,7 +192,7 @@ function EditPetPage(props) {
               <option value="senior">Senior</option>
             </select>
 
-        <label>Weight:</label>
+        <label>Weight (kg):</label>
           <input
             type="number"
             name="weight"
@@ -206,7 +208,7 @@ function EditPetPage(props) {
               <option value="no other pets">No other pets</option>
               <option value="good with dogs">Good with dogs</option>
               <option value="good with cats">Good with cats</option>
-              <option value="good with other">Good with other animals</option>
+              <option value="good with other animals">Good with other animals</option>
             </select>
 
         <label>Kid friendly:</label>
@@ -266,22 +268,26 @@ function EditPetPage(props) {
               checked={!isVaccinated}
             />
           </div>
-          <label>Location:</label>
+          <label>Location*:</label>
             <input
             type="text"
             name="location"
+            placeholder="City name"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
 
-        <label>My Story:</label>
+        <label>My Story*:</label>
         <textarea
           name="description"
+          placeholder="please describe the pet and their story"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
  
         <button type="submit">Update Pet</button>
+        <p>* are required fields for the form.</p>
+
         
       </form>
       <button onClick={deletePet}>Delete Pet</button>
