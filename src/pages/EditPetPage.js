@@ -29,9 +29,7 @@ function EditPetPage(props) {
   const { petId } = useParams(); 
   const navigate = useNavigate();  
 
-
-
-   // This effect will run after the initial render and each time
+  // This effect will run after the initial render and each time
  // the project id coming from URL parameter `projectId` changes
   
  useEffect(() => {

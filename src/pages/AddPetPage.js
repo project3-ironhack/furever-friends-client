@@ -34,7 +34,7 @@ function AddPetPage(props) {
       axios
         .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData)
         .then((response) => {
-          setImage(response.data.image)
+          setImage(response.data.fileUrl)
         });
     };
 
@@ -91,9 +91,6 @@ function AddPetPage(props) {
       setDogRace("");
       setSize("");
       props.refreshPets();
-    
-
-
     })
     .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -111,7 +108,6 @@ function AddPetPage(props) {
         <input
           type="file"
           name="image"
-          value={image}
           onChange={(e) => {handleFileUpload(e)}}
         />
 
