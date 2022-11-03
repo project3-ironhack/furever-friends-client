@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";                     
@@ -9,27 +11,31 @@ function Navbar() {
   // the values from AuthContext.Provider `value` prop
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext); 
 
-  return (
-    <nav>
+  const navRef = useRef();
+
+	const showNavbar = () => {
+		navRef.current.classList.toggle("responsive_nav");
+	};
+
+	return (
+		<header>
       <Link to="/">
-        <button>Home</button>
+        <h1 className="logo">Furever Friends</h1>
       </Link>
 
-      <Link to="/about">
-        <button>About</button>
+			<nav ref={navRef}>
+      <Link to="/">
+        Home
       </Link>
-
-    
       <Link to="/pets">
-        <button>Pets</button>
+       Pets
+      </Link>
+      <Link to="/pets/add-pet">
+        Add pet
       </Link>
 
-      <Link to="/pets/add-pet">
-        <button>Add pet</button>
-      </Link>
- 
-      {/*    If login, button logout showing  */}
-      {isLoggedIn && (
+        {/*    If login, button logout showing  */}
+        {isLoggedIn && (
         <>      
           <button onClick={logOutUser}>Logout</button>
           <span>{user && user.name}</span>
@@ -39,12 +45,23 @@ function Navbar() {
         {/*    If logout, button login and Signup showing  */}
       {!isLoggedIn && (
         <>
-          <Link to="/signup"> <button>Sign Up</button> </Link>
-          <Link to="/login"> <button>Login</button> </Link>
+          <Link to="/signup"> Sign Up </Link>
+          <Link to="/login"  className="login"> Login </Link>
         </>
       )}
-    </nav>
-  );
+
+
+				<button
+					className="nav-btn nav-close-btn"
+					onClick={showNavbar}>
+					<FaTimes />
+				</button>
+			</nav>
+			<button className="nav-btn" onClick={showNavbar}>
+				<FaBars />
+			</button>
+		</header>
+	);
 }
  
 export default Navbar;
