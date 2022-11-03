@@ -52,8 +52,12 @@ function PetDetailsPage (props) {
           <p><span>Pet Friendly:</span> {pet.petFriendly}</p>
           <p><span>Kid Friendly:</span> {pet.kidFriendly}</p>
           <p><span>Fur Length:</span> {pet.furLength}</p>
-          <p><span>Neutered:</span> {pet.isNeutered}</p>
-          <p><span>Vaccination:</span> {pet.isVaccinated}</p>   
+          <p><span>Neutered:</span> 
+            {pet.isNeutered === true && ' yes'}
+            {pet.isNeutered === false && ' no'}</p>
+          <p><span>Vaccination:</span> 
+            {pet.isVaccinated === true && ' yes'}
+            {pet.isVaccinated === false && ' no'}</p>   
           
 
           <h2>My story</h2>
