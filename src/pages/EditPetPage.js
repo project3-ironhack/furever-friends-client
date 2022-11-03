@@ -65,6 +65,16 @@ function EditPetPage(props) {
     
   }, [petId]);
 
+  const handleFileUpload = (e) => {
+    e.preventDefault()
+    const uploadData = new FormData();
+    uploadData.append("image", e.target.files[0]);
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData)
+      .then((response) => {
+        setImage(response.data.image)
+      });
+  };
 
   const handleFormSubmit = (e) => {                     
     e.preventDefault();
@@ -136,11 +146,10 @@ function EditPetPage(props) {
         />
         <label>Image:</label>
           <input
-            type="text"
+            type="file"
             name="image"
-            placeholder="add an image"
             value={image}
-            onChange={(e) => setImage(e.target.value)}
+            onChange={(e) => handleFileUpload(e)}
           />
         <div id="radios">
           Choose an animal*

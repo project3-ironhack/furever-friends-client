@@ -4,8 +4,6 @@ import axios from "axios";
 import AddDog from "../components/AddDog";
 import AddCat from "../components/AddCat";
  
-
- 
 function AddPetPage(props) {
     const [petName, setPetName] = useState("");
     const [sex, setSex] = useState("");
@@ -27,7 +25,18 @@ function AddPetPage(props) {
     const [errorMessage, setErrorMessage] = useState(undefined);
 
     const navigate = useNavigate();
-    
+
+
+    const handleFileUpload = (e) => {
+      e.preventDefault()
+      const uploadData = new FormData();
+      uploadData.append("image", e.target.files[0]);
+      axios
+        .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData)
+        .then((response) => {
+          setImage(response.data.image)
+        });
+    };
 
   const handleSubmit = (e) => {                         
     e.preventDefault();
@@ -98,13 +107,12 @@ function AddPetPage(props) {
       <h3>Add Pet</h3>
 
       <form onSubmit={handleSubmit}>
-      <label>Image:</label>
+      <label>Image (jpg or png):</label>
         <input
-          type="text"
+          type="file"
           name="image"
-          placeholder="add an image"
           value={image}
-          onChange={(e) => setImage(e.target.value)}
+          onChange={(e) => {handleFileUpload(e)}}
         />
 
         <label>Pet Name*:</label>

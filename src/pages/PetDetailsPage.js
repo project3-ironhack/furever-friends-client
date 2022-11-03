@@ -4,9 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import CatDetails from "../components/CatDetails";
 import DogDetails from "../components/DogDetails";
 
-
 // const API_URL = "http://localhost:5005";  
- 
+
  
 function PetDetailsPage (props) {
   const [pet, setPet] = useState(null);
