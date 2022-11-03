@@ -20,7 +20,7 @@ function DogDetails(props) {
   }, []);
 
   return (
-    <div className="DogDetails">
+    <>
       {dog !== null && (
         <div>
           <tr>
@@ -33,7 +33,7 @@ function DogDetails(props) {
           </tr>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

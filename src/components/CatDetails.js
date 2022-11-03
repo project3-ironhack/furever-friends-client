@@ -20,14 +20,14 @@ function CatDetails(props) {
   }, []);
 
   return (
-    <div className="CatDetails">
+    <>
       {cat !== null && (
         <tr>
           <td id="info">Breed:</td>
-          <td id="breed">{props.catRace}</td>
+          <td>{props.catRace}</td>
         </tr>
       )}
-    </div>
+    </>
   );
 }
 
