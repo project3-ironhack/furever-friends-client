@@ -37,7 +37,7 @@ function EditDog(props) {
   return (
     <div>
     <label htmlFor="dogRace">Dog breed</label>
-      <select value={props.dogRace} onChange={handleDogRace}>
+      <select id="dogRace" value={props.dogRace} onChange={handleDogRace}>
         { dogRaces !== null && dogRaces.map((item) => 
            <option key={props.dogRace}>{item}</option>
         )}

@@ -26,7 +26,7 @@ function EditCat(props) {
     <div>
     <label htmlFor="catRace">Cat breed</label>
       <select
-        id="props.catRace"
+        id="catRace"
         value={props.catRace}
         onChange={handleCatRace}>
         { catRaces !== null && catRaces.map((item) => 
