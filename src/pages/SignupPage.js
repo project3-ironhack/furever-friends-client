@@ -68,26 +68,13 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="SignUpPage">
-      <h1>Sign up</h1>
+    <div className="container">
+      <h1 className="signup-title">Sign up</h1>
+
       <form onSubmit={handleSignupSubmit}>
-        <label>Email*:</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="catlover@gmail.com"
-          value={email}
-          onChange={handleEmail}
-        />
-        <label>Password*:</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="stR0ngPassw0rd"
-          value={password}
-          onChange={handlePassword}
-        />
-        <label>Name*:</label>
+      <div className="row">
+      <div className="column">
+      <label>Name*:</label>
         <input 
           type="text"
           name="name"
@@ -95,14 +82,40 @@ function SignupPage(props) {
           value={name}
           onChange={handleName} 
         />
-        <label>Telephone:</label>
+      </div>
+      <div className="column">
+      <label>Email*:</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="catlover@gmail.com"
+          value={email}
+          onChange={handleEmail}
+        />
+      </div>
+      <div className="column">
+      <label>Password*:</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="stR0ngPassw0rd"
+          value={password}
+          onChange={handlePassword}
+        />
+      </div>
+      </div>
+      <div className="row">
+      <div className="column">
+      <label>Telephone:</label>
         <input
           type="number"
           name="telephone"
           value={telephone}
           onChange={handleTelephone}
         />
-        <label>City:</label>
+      </div>
+      <div className="column">
+      <label>City:</label>
         <input 
           type="text"
           name="city"
@@ -110,6 +123,18 @@ function SignupPage(props) {
           onChange={handleCity}
         />
 
+      </div>
+
+
+      </div>
+
+      <div className="row"></div>
+      <div className="column"></div>
+        
+        
+       
+        
+        
         <div id="radios">
           Are you a potential adopter or an association?
           <label>Adopter</label>
@@ -149,12 +174,12 @@ function SignupPage(props) {
           />} 
 
         <button type="submit">Sign up</button>
-        <p>* are required fields for the form.</p>
+        <p className="required-field">* are required fields for the form.</p>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have an account?</p>
+      <p className="already">Already have an account?</p>
       <Link to={"/login"}>Login</Link>
     </div>
   );
