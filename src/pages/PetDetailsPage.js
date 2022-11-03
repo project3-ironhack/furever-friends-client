@@ -42,9 +42,7 @@ function PetDetailsPage (props) {
           <p>I'm a: {pet.typeOfPet}</p>
           {pet.typeOfPet === 'cat' ?
           <CatDetails catRace={pet.catRace}/> :
-          <DogDetails dogRace={pet.dogRace} />}
-         {pet.typeOfPet === 'dog' &&
-            <DogDetails size={pet.size}/>}
+          <DogDetails dogRace={pet.dogRace} size={pet.size} />}
           <p>Sex: {pet.sex}</p>
           <p>Birthday: {pet.birthday}</p>
           <p><span>Age Category:</span> {pet.ageType}</p>
