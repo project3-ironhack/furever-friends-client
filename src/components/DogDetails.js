@@ -1,42 +1,40 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import axios from "axios";
-// import { useParams } from "react-router-dom";
+import './DogDetails.css'
 
-
-function DogDetails (props) {
+function DogDetails(props) {
   const [dog, setDog] = useState(null);
 
   const getDog = () => {
- 
-  axios
-    .get(
-      `${process.env.REACT_APP_API_URL}/api/dogs/breeds`,
-    )
-    .then((response) => {
-      const oneDog = response.data;
-      setDog(oneDog);
-    })
-    .catch((error) => console.log(error));
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/api/dogs/breeds`)
+      .then((response) => {
+        const oneDog = response.data;
+        setDog(oneDog);
+      })
+      .catch((error) => console.log(error));
   };
-  
-  useEffect(()=> {                  
+
+  useEffect(() => {
     getDog();
-  }, [] );
+  }, []);
 
   return (
-         <div className="DogDetails">
-         {(dog !== null) &&
+    <div className="DogDetails">
+      {dog !== null && (
         <div>
-          <p>Breed: {props.dogRace}</p>
-          <p>Dog size: {props.size}</p>
+          <tr>
+          <td id="info">Breed:</td>
+            <td>{props.dogRace}</td>
+          </tr>
+          <tr>
+          <td id="info">Dog size:</td>
+            <td>{props.size}</td>
+          </tr>
         </div>
-
-         }
-      
+      )}
     </div>
-    
-  )
-  
+  );
 }
- 
+
 export default DogDetails;
