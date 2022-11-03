@@ -27,8 +27,8 @@ function DogDetails (props) {
          <div className="DogDetails">
          {(dog !== null) &&
         <div>
-          <p>Breed: {props.dog.dogRace}</p>
-          <p>Dog size: {props.dog.size}</p>
+          <p>Breed: {props.dogRace}</p>
+          <p>Dog size: {props.size}</p>
         </div>
 
          }

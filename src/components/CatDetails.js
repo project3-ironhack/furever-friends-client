@@ -27,7 +27,7 @@ function CatDetails (props) {
          <div className="CatDetails">
          {(cat !== null) &&
 
-          <p>Breed: {props.cat.catRace}</p>
+          <p>Breed: {props.catRace}</p>
 
          }
       
