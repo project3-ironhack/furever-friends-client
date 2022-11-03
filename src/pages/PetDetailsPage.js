@@ -16,10 +16,7 @@ function PetDetailsPage (props) {
   const getPet = () => {          
       
   axios
-    .get(
-      `${process.env.REACT_APP_API_URL}/api/pets/${petId}`,
-      // { headers: { Authorization: `Bearer ${storedToken}` } }
-    )
+    .get(`${process.env.REACT_APP_API_URL}/api/pets/${petId}`,)
     .then((response) => {
       const onePet = response.data;
       setPet(onePet);
@@ -43,11 +40,11 @@ function PetDetailsPage (props) {
 
           <h2>Facts about me</h2>
           <p>I'm a: {pet.typeOfPet}</p>
-          <p>as well as:
-          
-           {/*({pet.typeOfPet === 'cat' && <CatDetails />} 
-           {pet.typeOfPet === 'dog' && <DogDetails />})*/}
-          </p>
+          {pet.typeOfPet === 'cat' ?
+          <CatDetails catRace={pet.catRace}/> :
+          <DogDetails dogRace={pet.dogRace} />}
+         {pet.typeOfPet === 'dog' &&
+            <DogDetails size={pet.size}/>}
           <p>Sex: {pet.sex}</p>
           <p>Birthday: {pet.birthday}</p>
           <p><span>Age Category:</span> {pet.ageType}</p>
