@@ -12,10 +12,15 @@ function AddDog(props) {
     const [dogRaces, setDogRaces] = useState(null);
     const [sizes, setSizes] = useState(null);
 
+    // Get the token from the localStorage 
+    const storedToken = localStorage.getItem("authToken");
+
 
     useEffect(() => {
         axios
-        .get(`${process.env.REACT_APP_API_URL}/api/dogs/breeds`)
+        .get(`${process.env.REACT_APP_API_URL}/api/dogs/breeds`,
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+        )
         .then((response) => {
             setDogRaces(response.data);
         })  
@@ -23,7 +28,9 @@ function AddDog(props) {
 
     useEffect(() => {
         axios
-        .get(`${process.env.REACT_APP_API_URL}/api/dogs/sizes`)
+        .get(`${process.env.REACT_APP_API_URL}/api/dogs/sizes`,
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+        )
         .then((response) => {
             setSizes(response.data);
         })  

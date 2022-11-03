@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import AddDog from "../components/AddDog";
 import AddCat from "../components/AddCat";
@@ -51,15 +51,16 @@ function AddPetPage(props) {
         ageType
 
      };
-     
-     console.log(requestBody);
-   
+    
+    // Get the token from the localStorage 
+    const storedToken = localStorage.getItem("authToken");
   
-   
     // Send the token through the request "Authorization" Headers
     axios
       .post(
-      `${process.env.REACT_APP_API_URL}/api/pets`, requestBody)
+      `${process.env.REACT_APP_API_URL}/api/pets`, requestBody,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
       .then((response) => {
         navigate("/pets");
       // Reset the state

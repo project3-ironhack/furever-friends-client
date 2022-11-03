@@ -88,22 +88,31 @@ function EditPetPage(props) {
       dogRace,
       size,
     };
+
+      // Get the token from the localStorage 
+      const storedToken = localStorage.getItem("authToken");
  
     // Make a PUT request to update the project
     axios
-      .put(`${process.env.REACT_APP_API_URL}/api/pets/${petId}`, requestBody)
+      .put(`${process.env.REACT_APP_API_URL}/api/pets/${petId}`, requestBody,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
       .then((response) => {
         // Once the request is resolved successfully and the project
         // is updated we navigate back to the details page
         navigate(`/pets/${petId}`)
       });
   };
-console.log(sex)
+
+  // Get the token from the localStorage 
+  const storedToken = localStorage.getItem("authToken");
 
   const deletePet = () => {                    
     // Make a DELETE request to delete the project
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/api/pets/${petId}`)
+      .delete(`${process.env.REACT_APP_API_URL}/api/pets/${petId}`,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
       .then(() => {
         // Once the delete request is resolved successfully
         // navigate back to the list of projects.

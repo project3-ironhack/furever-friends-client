@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 
 // Components
 import Navbar from "./components/Navbar"; 
-// import AddPet from "./components/AddPet"; 
-// import IsPrivate from "./components/IsPrivate"; 
+import IsPrivate from "./components/IsPrivate";
+import IsAnon from './components/IsAnon';
 
 // Pages
 import HomePage from "./pages/HomePage"; 
@@ -27,16 +27,13 @@ function App() {
 
       <Route path='/' element={ <HomePage />} />
       <Route path='/pets' element={ <PetListPage />} />
-      <Route path='/pets/add-pet' element={<AddPetPage/>}/>
       <Route path='/pets/:petId' element={<PetDetailsPage/>}/>
-      <Route path='/pets/edit/:petId' element={<EditPetPage/>}/>
-     
 
+        <Route path='/pets/edit/:petId' element={<IsPrivate><EditPetPage/></IsPrivate>}/>
+        <Route path='/pets/add-pet' element={<IsPrivate><AddPetPage/></IsPrivate>}/>
 
-
-
-      <Route path="/signup" element={ <SignupPage /> } />
-      <Route path="/login" element={ <LoginPage /> } />
+      <Route path="/signup" element={ <IsAnon><SignupPage /></IsAnon> } />
+      <Route path="/login" element={ <IsAnon><LoginPage /></IsAnon> } />
 
     </Routes> 
 
