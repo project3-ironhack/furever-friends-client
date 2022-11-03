@@ -182,6 +182,7 @@ function AddPetPage(props) {
             <option value="">--Please choose an option--</option>
             <option value="unknown">Unknown</option>
             <option value="no other pets">No other pets</option>
+            <option value="good with cats">good with cats</option>
             <option value="good with dogs">Good with dogs</option>
             <option value="good with other">Good with other animals</option>
         </select>
