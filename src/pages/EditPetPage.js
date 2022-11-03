@@ -44,7 +44,7 @@ function EditPetPage(props) {
         */
         const onePet = response.data;
         setPetName(onePet.petName);
-        setSex(onePet.description);
+        setSex(onePet.sex);
         setDescription(onePet.description);
         setBirthday(onePet.birthday);
         setAgeType(onePet.ageType);
@@ -70,24 +70,27 @@ function EditPetPage(props) {
     e.preventDefault();
     // Create an object representing the body of the PUT request
     const requestBody = {
-      petName,
-      sex,
-      birthday,
-      ageType,
-      description,
-      weight,
-      petFriendly,
-      kidFriendly,
-      furLength,
-      location,
-      isNeutered,
-      isVaccinated,
-      image,
-      typeOfPet,
-      catRace,
-      dogRace,
-      size,
+      petName: petName,
+      sex: sex,
+      birthday: birthday,
+      ageType: ageType,
+      description: description,
+      weight: weight,
+      petFriendly: petFriendly,
+      kidFriendly: kidFriendly,
+      furLength: furLength,
+      location: location,
+      isNeutered: isNeutered,
+      isVaccinated: isVaccinated,
+      image: image,
+      typeOfPet: typeOfPet,
+      catRace: catRace,
+      dogRace: dogRace,
+      size: size,
     };
+
+    // const reqBodyCat = { catRace };
+    // const reqBodyDog = { dogRace, size },
 
       // Get the token from the localStorage 
       const storedToken = localStorage.getItem("authToken");
@@ -178,8 +181,8 @@ function EditPetPage(props) {
             id="sex"
             onChange={(e) => setSex(e.target.value)}
             value={sex}>
-              <option value="female">Female</option>
-              <option value="male">Male</option>
+              <option value="female">female</option>
+              <option value="male">male</option>
             </select>
 
         <label>Age group*:</label>
