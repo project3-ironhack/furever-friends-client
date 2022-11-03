@@ -93,6 +93,9 @@ function SignupPage(props) {
           onChange={handleEmail}
         />
       </div>
+      </div>
+
+      <div className="row">
       <div className="column">
       <label>Password*:</label>
         <input
@@ -103,8 +106,7 @@ function SignupPage(props) {
           onChange={handlePassword}
         />
       </div>
-      </div>
-      <div className="row">
+
       <div className="column">
       <label>Telephone:</label>
         <input
@@ -114,6 +116,9 @@ function SignupPage(props) {
           onChange={handleTelephone}
         />
       </div>
+      </div>
+
+      <div className="row">
       <div className="column">
       <label>City:</label>
         <input 
@@ -122,36 +127,32 @@ function SignupPage(props) {
           value={city}
           onChange={handleCity}
         />
-
+      </div>
       </div>
 
-
-      </div>
-
-      <div className="row"></div>
-      <div className="column"></div>
-        
-        
-       
-        
-        
-        <div id="radios">
-          Are you a potential adopter or an association?
+      <h3>Are you a potential adopter or an association?</h3>
+      <div className="row">
+      <div className="column">
+      <div id="radios">
           <label>Adopter</label>
-          <input 
-            type="radio" 
-            name="type"
-            value={'adopter'}
-            onChange={(e) => setType('adopter')}
-          />
-        <label>Association</label>
-          <input
-            type="radio" 
-            name="type"
-            value={'association'}
-            onChange={(e) => setType('association')}
-          />
-        </div> 
+            <input 
+              type="radio" 
+              name="type"
+              value={'adopter'}
+              onChange={(e) => setType('adopter')}
+            />
+          </div>
+          <div className="column">
+            <label>Association</label>
+            <input
+              type="radio" 
+              name="type"
+              value={'association'}
+              onChange={(e) => setType('association')}
+            />
+        </div>
+      </div> 
+    </div>
 
         {type === 'adopter' ?
           <AddAdopter
@@ -173,7 +174,7 @@ function SignupPage(props) {
             setImage={setImage}
           />} 
 
-        <button type="submit">Sign up</button>
+        <button type="submit" className="submit-signup">Sign up</button>
         <p className="required-field">* are required fields for the form.</p>
       </form>
 

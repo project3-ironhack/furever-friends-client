@@ -19,28 +19,47 @@ function AddAssociation(props) {
 
   return (
     <div>
-      <label htmlFor="website">Association website*:</label>
-      <input
-        id="website"
-        type="text"
-        name="website"
-        placeholder="https://welovecats.org"
-        value={props.website}
-        onChange={handleWebsite}
-      />
-      <label htmlFor="association">What kind of association are you?</label>
-      <select id="association"
-        onChange={handleAssociationType}
-        name="associationType"
-        value={props.associationType}
-      >
-      <option value="">--Please choose an option--</option>
-        {associations !== null &&
-          associations.map((item) => (
-            <option key={props.associationType}>{item}</option>
-          ))}
-      </select>
+
+      <div className="row-association">
+        <div className="column-association">
+          <label htmlFor="website">Association website*:</label>
+        </div>
+        <div className="column-association">
+            <input
+            id="website"
+            type="text"
+            name="website"
+            placeholder="https://welovecats.org"
+            value={props.website}
+            onChange={handleWebsite}
+             />
+        </div>
+      </div>
+
+      <div className="row-association">
+        <div className="column-association">
+          <label htmlFor="association">What kind of association are you?</label>
+        </div>
+        <div className="column-association">
+            <select id="association"
+            onChange={handleAssociationType}
+            name="associationType"
+            value={props.associationType}
+            >
+            <option value="">--Please choose an option--</option>
+            {associations !== null &&
+              associations.map((item) => (
+                <option key={props.associationType}>{item}</option>
+              ))}
+          </select>
+        </div>
+      </div>
+
+      <div className="row-association">
+      <div className="column-association">
       <label htmlFor="image">Association image:</label>
+      </div>
+      <div className="column-association">
       <input
         id="image"
         type="text"
@@ -49,6 +68,8 @@ function AddAssociation(props) {
         value={props.image}
         onChange={handleImage}
       />
+      </div>
+      </div> 
     </div>
   );
 }

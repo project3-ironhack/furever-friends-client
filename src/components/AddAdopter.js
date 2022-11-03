@@ -28,22 +28,42 @@ function AddAdopter(props) {
 
   return (
     <div>
-    <label htmlFor="home">What kind of home do you live in?</label>
-      <select id="home" onChange={handleHome}>
-      <option value="">--Please choose an option--</option>
-        {homes !== null && homes.map((item) => 
-           <option key={props.home}>{item}</option>
-        )}
-      </select>
-      <label htmlFor="yard">Would a pet have yard access?</label>
-      <input
-        id="yard"
-        type="checkbox"
-        name="yardAccess"
-        value={props.yardAccess}
-        onChange={handleYardAccess}
-      />
-      <label htmlFor="kids">Do you have kids?</label>
+    <div className="row-adopter">
+      <div className="column-adopter">
+        <label htmlFor="home">What kind of home do you live in?</label>
+      </div>
+      <div className="column-adopter">
+        <select id="home" onChange={handleHome}>
+          <option value="">--Please choose an option--</option>
+            {homes !== null && homes.map((item) => 
+              <option key={props.home}>{item}</option>
+            )}
+          </select>
+      </div>
+    </div>
+
+   
+
+    <div className="row">
+      <div className="column-adopter">
+        <label htmlFor="yard">Would a pet have yard access?</label>
+      </div>
+      <div className="column-adopter">
+          <input
+            id="yard"
+            type="checkbox"
+            name="yardAccess"
+            value={props.yardAccess}
+            onChange={handleYardAccess}
+          />
+      </div>
+    </div>
+
+    <div className="row">
+      <div className="column-adopter">
+        <label htmlFor="kids">Do you have kids?</label>
+      </div>
+      <div className="column-adopter">
       <input
         id="kids"
         type="checkbox"
@@ -51,13 +71,23 @@ function AddAdopter(props) {
         value={props.hasKids}
         onChange={handleHasKids}
       />
-      <label htmlFor="pets">Do you already have any pets?</label>
-      <select id="pets" onChange={handleHasPets} value={props.hasPets}>
-      <option value="">--Please choose an option--</option>
-        {pets !== null && pets.map((item) => 
-           <option key={props.hasPets}>{item}</option>
-        )}
-      </select>
+      </div>
+    </div>
+
+    <div className="row">
+      <div className="column-adopter">
+        <label htmlFor="pets">Do you already have any pets?</label>
+      </div>
+      <div className="column-adopter">
+        <select id="pets" onChange={handleHasPets} value={props.hasPets}>
+        <option value="">--Please choose an option--</option>
+          {pets !== null && pets.map((item) => 
+            <option key={props.hasPets}>{item}</option>
+          )}
+        </select>
+      </div>
+    </div> 
+      
     </div>
   );
 }
