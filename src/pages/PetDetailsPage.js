@@ -40,7 +40,7 @@ function PetDetailsPage (props) {
          <div className="PetDetails">
          {(pet !== null) && <>
 
-          <img src="{pet.image}" />
+          <img src={pet.image} alt={pet.name} /> 
           <h1>My name is {pet.petName}!</h1>
 
           <h2>Facts about me</h2>
