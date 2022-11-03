@@ -89,12 +89,8 @@ function EditPetPage(props) {
       size: size,
     };
 
-    // const reqBodyCat = { catRace };
-    // const reqBodyDog = { dogRace, size },
-
       // Get the token from the localStorage 
       const storedToken = localStorage.getItem("authToken");
- 
     // Make a PUT request to update the project
     axios
       .put(`${process.env.REACT_APP_API_URL}/api/pets/${petId}`, requestBody,

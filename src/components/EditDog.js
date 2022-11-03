@@ -39,14 +39,14 @@ function EditDog(props) {
     <label htmlFor="dogRace">Dog breed</label>
       <select id="dogRace" value={props.dogRace} onChange={handleDogRace}>
         { dogRaces !== null && dogRaces.map((item) => 
-           <option key={props.dogRace}>{item}</option>
+           <option key={item}>{item}</option>
         )}
       </select>
 
       <label htmlFor="size">Dog size</label>
       <select value={props.size} onChange={handleSize}>
         { sizes !== null && sizes.map((item) => 
-           <option key={props.size}>{item}</option>
+           <option key={item}>{item}</option>
         )}
       </select>
     </div>

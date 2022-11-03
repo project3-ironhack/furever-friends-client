@@ -30,7 +30,7 @@ function EditCat(props) {
         value={props.catRace}
         onChange={handleCatRace}>
         { catRaces !== null && catRaces.map((item) => 
-           <option key={props.catRace}>{item}</option>
+           <option key={item}>{item}</option>
         )}
       </select>
     </div>
