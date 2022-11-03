@@ -4,8 +4,6 @@ import axios from "axios";
 import AddAdopter from "../components/AddAdopter";
 import AddAssociation from "../components/AddAssociation";
 
-// const API_URL = "http://localhost:5005";
-
 function SignupPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -73,19 +71,27 @@ function SignupPage(props) {
     <div className="SignUpPage">
       <h1>Sign up</h1>
       <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
-        <label>Password:</label>
+        <label>Email*:</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="catlover@gmail.com"
+          value={email}
+          onChange={handleEmail}
+        />
+        <label>Password*:</label>
         <input
           type="password"
           name="password"
+          placeholder="stR0ngPassw0rd"
           value={password}
           onChange={handlePassword}
         />
-        <label>Name:</label>
+        <label>Name*:</label>
         <input 
           type="text"
           name="name"
+          placeholder="Robert Smith"
           value={name}
           onChange={handleName} 
         />
@@ -114,7 +120,7 @@ function SignupPage(props) {
             onChange={(e) => setType('adopter')}
           />
         <label>Association</label>
-          <input 
+          <input
             type="radio" 
             name="type"
             value={'association'}
@@ -143,6 +149,7 @@ function SignupPage(props) {
           />} 
 
         <button type="submit">Sign up</button>
+        <p>* are required fields for the form.</p>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}

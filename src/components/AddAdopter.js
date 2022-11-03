@@ -1,8 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-// const API_URL = "http://localhost:5005";
-
 function AddAdopter(props) {
     const handleHome = (e) => props.setHome(e.target.value);
     const handleYardAccess = (e) => props.setYardAccess(e.target.value);

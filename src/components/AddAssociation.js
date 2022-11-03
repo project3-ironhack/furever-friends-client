@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-// const API_URL = "http://localhost:5005";
-
 function AddAssociation(props) {
   
   const [associations, setAssociations] = useState(null);
@@ -21,11 +19,12 @@ function AddAssociation(props) {
 
   return (
     <div>
-      <label htmlFor="website">Association website:</label>
+      <label htmlFor="website">Association website*:</label>
       <input
         id="website"
         type="text"
         name="website"
+        placeholder="https://welovecats.org"
         value={props.website}
         onChange={handleWebsite}
       />
@@ -46,6 +45,7 @@ function AddAssociation(props) {
         id="image"
         type="text"
         name="image"
+        placeholder="add an image if desired"
         value={props.image}
         onChange={handleImage}
       />
