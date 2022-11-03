@@ -8,7 +8,6 @@ import Navbar from "./components/Navbar";
 
 // Pages
 import HomePage from "./pages/HomePage"; 
-import AboutPage from "./pages/AboutPage";
 import PetListPage from "./pages/PetListPage";
 import PetDetailsPage from "./pages/PetDetailsPage";
 import EditPetPage from "./pages/EditPetPage";
@@ -27,7 +26,6 @@ function App() {
     <Routes>
 
       <Route path='/' element={ <HomePage />} />
-      <Route path='/about' element={ <AboutPage />} />
       <Route path='/pets' element={ <PetListPage />} />
       <Route path='/pets/add-pet' element={<AddPetPage/>}/>
       <Route path='/pets/:petId' element={<PetDetailsPage/>}/>
