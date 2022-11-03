@@ -205,6 +205,7 @@ function EditPetPage(props) {
               <option value="unknown">Unknown</option>
               <option value="no other pets">No other pets</option>
               <option value="good with dogs">Good with dogs</option>
+              <option value="good with cats">Good with cats</option>
               <option value="good with other">Good with other animals</option>
             </select>
 
