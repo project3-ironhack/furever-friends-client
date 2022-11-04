@@ -49,6 +49,7 @@ API server
 # Setup
 
 If you don't want to have to run everything yourself on your computer, you can take a look at our site [here](https://fureverfriends.netlify.app/).
+```
 
 # Dynamic Duo
 
