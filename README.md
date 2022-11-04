@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Welcome to our final project done with Ironhack!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Our project
 
-## Available Scripts
+We decided to make a website where people can look for potential new fluffy friends to take home.
 
-In the project directory, you can run:
+## Why?
 
-### `npm start`
+In France alone, tens of thousands of pets are abandoned every year, especially in the summer months when people leave on vacation. We'd like to encourage people to adopt pets that need homes. Adopt, don't shop. :)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+With our app, you can see a list of pets available, find out more details about them, and if you sign up and login, you can edit the page or delete it. There are two different kinds of accounts - adopters, and associations. In a future version, adopters will be able to contact associations about the pets they have available for adoption.
 
-### `npm test`
+# Dev Details
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This portion of the webapp was made with React and CSS, no HTML/CSS/JS libraries like bootstrap. We coded the CSS with love and maybe a bit of sweat and tears.
 
-### `npm run build`
+# Run on your computer
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Back-end
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You would first need to consult our back-end repository to get the full experience, with you can find [here](https://github.com/project3-ironhack/furever-friends-server).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installing dependencies
 
-### `npm run eject`
+You will need to do `npm install` in the folder where you'd like the run this project.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Other npm packages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You will also need to have an account with [cloudinary](https://cloudinary.com/) to be able to use images on the webapp.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+# axios for API requests
+npm i axios
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# react router dom
+npm i react-router-dom
 
-## Learn More
+Environment variables should be the following:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+PORT=                   // The port where you'll run the front-end.
+REACT_APP_API_URL       // API server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+# Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+If you don't want to have to run everything yourself on your computer, you can take a look at our site [here](https://fureverfriends.netlify.app/).
 
-### Analyzing the Bundle Size
+# Dynamic Duo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was made by [Liz Manresa](https://github.com/9liz9) and [Julia Spriggs](https://github.com/julia-spriggs), both naturalized citizens of France and big fans of cats. :)
