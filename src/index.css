@@ -121,11 +121,6 @@ text-align: center;
 }
 
 
-
-
-
-
-
 .card {
   width: 400px;
   padding: 10px;
@@ -169,5 +164,20 @@ text-align: center;
 
 .AddPet button {
   display: block;
+}
+
+.required-field {
+	color: red;
+}
+
+h1 {
+	text-align: center;
+}
+
+.delete {
+	background-color: red;
+	color: white;
+	margin: 1em;
+	padding: 0.5em;
 }
  

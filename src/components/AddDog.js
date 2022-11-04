@@ -38,20 +38,20 @@ function AddDog(props) {
 
   return (
     <div>
-    <label htmlFor="dogRace">Dog breed</label>
+    <p><label htmlFor="dogRace">Dog breed</label></p>
       <select id="dogRace" onChange={handleDogRace}>
         { dogRaces !== null && dogRaces.map((item) => 
            <option key={item}>{item}</option>
         )}
       </select>
 
-      <label htmlFor="size">Dog size</label>
-      <select required id="size" onChange={handleSize}>
+      <p><label htmlFor="size">Dog size</label></p>
+      <p><select required id="size" onChange={handleSize}>
       <option value="">--Please choose an option--</option>
         { sizes !== null && sizes.map((item) => 
            <option key={item}>{item}</option>
         )}
-      </select>
+      </select></p>
     </div>
   );
 }

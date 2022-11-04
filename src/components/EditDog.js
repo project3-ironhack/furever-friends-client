@@ -36,14 +36,14 @@ function EditDog(props) {
 
   return (
     <div>
-    <label htmlFor="dogRace">Dog breed</label>
+    <p><label htmlFor="dogRace">Dog breed</label></p>
       <select id="dogRace" value={props.dogRace} onChange={handleDogRace}>
         { dogRaces !== null && dogRaces.map((item) => 
            <option key={item}>{item}</option>
         )}
       </select>
 
-      <label htmlFor="size">Dog size</label>
+      <p><label htmlFor="size">Dog size</label></p>
       <select value={props.size} onChange={handleSize}>
         { sizes !== null && sizes.map((item) => 
            <option key={item}>{item}</option>

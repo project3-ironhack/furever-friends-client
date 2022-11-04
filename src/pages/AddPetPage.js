@@ -104,39 +104,39 @@ function AddPetPage(props) {
       <h3>Add Pet</h3>
 
       <form onSubmit={handleSubmit}>
-      <label>Image (jpg or png):</label>
+      <p><label>Image (jpg or png):</label>
         <input
           type="file"
           name="image"
           onChange={(e) => {handleFileUpload(e)}}
-        />
+        /></p>
 
-        <label>Pet Name*:</label>
+        <p><label className="required-field">Pet Name*:</label>
         <input
           type="text"
           name="petName"
           placeholder="please add pet name"
           value={petName}
           onChange={(e) => setPetName(e.target.value)}
-        />
+        /></p>
 
 
         <div id="radios">
-          Choose an animal*
-          <label>Cat</label>
+        <p className="required-field">Choose an animal*:</p>
+          <p><label>Cat</label>
           <input 
             type="radio" 
             name="typeOfPet"
             value={'cat'}
             onChange={(e) => setTypeOfPet('cat')}
-          />
-        <label>Dog</label>
+          /></p>
+        <p><label>Dog</label>
           <input 
             type="radio" 
             name="typeOfPet"
             value={'dog'}
             onChange={(e) => setTypeOfPet('dog')}
-          />
+          /></p>
         </div> 
 
         {typeOfPet === 'cat' && <AddCat catRace={catRace} setCatRace={setCatRace} /> }
@@ -144,7 +144,7 @@ function AddPetPage(props) {
         {typeOfPet === 'dog' && <AddDog dogRace={dogRace} setDogRace={setDogRace} size={size} setSize={setSize}/>}
 
 
-        <label>Sex*:</label>
+        <p><label className="required-field">Sex*:</label></p>
         <select type="string"
                 name="sex"
                 value={sex}
@@ -154,15 +154,15 @@ function AddPetPage(props) {
             <option value="male">Male</option>
         </select>
 
-        <label>Birthday:</label>
+        <p><label>Birthday:</label>
         <input
           type="date"
           name="birthday"
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
-        />
+        /></p>
 
-        <label>Age group*:</label>
+        <p><label className="required-field">Age group*:</label></p>
         <select type="string"
                 name="ageType"
                 value={ageType}
@@ -173,16 +173,16 @@ function AddPetPage(props) {
             <option value="senior">Senior</option>
         </select>
 
-        <label>Weight (kg):</label>
-        <input
+        <p><label>Weight (kg):</label></p>
+        <p><input
           type="number"
           name="weight"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
-        />
+        /></p>
 
-        <label>Pet friendly:</label>
-        <select type="string"
+        <p><label>Pet friendly:</label></p>
+        <p><select type="string"
                 name="petFriendly"
                 value={petFriendly}
                 onChange={(e) => setPetFriendly(e.target.value)} >
@@ -192,10 +192,10 @@ function AddPetPage(props) {
             <option value="good with cats">good with cats</option>
             <option value="good with dogs">Good with dogs</option>
             <option value="good with other">Good with other animals</option>
-        </select>
+        </select></p>
 
-        <label>Kid friendly:</label>
-        <select type="string"
+        <p><label>Kid friendly:</label></p>
+        <p><select type="string"
                 name="kidFriendly"
                 value={kidFriendly}
                 onChange={(e) => setKidFriendly(e.target.value)} >
@@ -203,10 +203,10 @@ function AddPetPage(props) {
             <option value="unknown">Unknown</option>
             <option value="good with kids">Good with kids</option>
             <option value="not good with kids">Not good with kids</option>
-        </select>
+        </select></p>
 
-        <label>Fur Length:</label>
-        <select type="string"
+        <p><label>Fur Length:</label></p>
+        <p><select type="string"
                 name="furLength"
                 value={furLength}
                 onChange={(e) => setFurLength(e.target.value)} >
@@ -215,7 +215,7 @@ function AddPetPage(props) {
             <option value="medium">Medium</option>
             <option value="long">Long</option>
             <option value="furless">Furless</option>
-        </select>
+        </select></p>
 
         <div className="radios">
         <p>Neutered:</p>
@@ -263,7 +263,7 @@ function AddPetPage(props) {
 
         
         
-        <label>Location*:</label>
+        <label className="required-field">Location*:</label>
         <input
           type="string"
           name="location"
@@ -273,19 +273,19 @@ function AddPetPage(props) {
         />
 
  
-        <label>My Story*:</label>
-        <textarea
+        <p><label className="required-field">My Story*:</label></p>
+        <p><textarea
           type="text"
           name="description"
           placeholder="please describe the pet and their story"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        />
+        /></p>
 
 
  
-        <button type="submit">Submit</button>
-        <p>* are required fields for the form.</p>
+        <p><button type="submit">Submit</button></p>
+        <p className="required-field">* are required fields for the form.</p>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>

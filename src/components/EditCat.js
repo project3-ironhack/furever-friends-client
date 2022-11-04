@@ -24,7 +24,7 @@ function EditCat(props) {
 
   return (
     <div>
-    <label htmlFor="catRace">Cat breed</label>
+    <p><label htmlFor="catRace">Cat breed</label></p>
       <select
         id="catRace"
         value={props.catRace}

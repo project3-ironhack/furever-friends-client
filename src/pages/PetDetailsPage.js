@@ -32,57 +32,59 @@ function PetDetailsPage(props) {
           <h1>My name is {pet.petName}!</h1>
           <h2>Facts about me</h2>
           <table>
-            <tr>
-            <td id="info">I'm a:</td>
-              <td>{pet.typeOfPet}</td>
-            </tr>
-                {pet.typeOfPet === "cat" ? (
-                  <CatDetails catRace={pet.catRace} />
-                ) : (
-                  <DogDetails dogRace={pet.dogRace} size={pet.size} />
-                )}
-            <tr>
-              <td id="info">Sex:</td>
-              <td>{pet.sex}</td>
-            </tr>
-            <tr>
-            <td id="info">Birthday:</td>
-              <td>{pet.birthday}</td>
-            </tr>
-            <tr>
-            <td id="info">Age Category:</td>
-              <td>{pet.ageType}</td>
-            </tr>
-            <tr>
-            <td id="info">Weight:</td>
-              <td>{pet.weight}</td>
-            </tr>
-            <tr>
-            <td id="info">Pet Friendly:</td>
-              <td>{pet.petFriendly}</td>
-            </tr>
-            <tr>
-            <td id="info">Kid Friendly:</td>
-              <td>{pet.kidFriendly}</td>
-            </tr>
-            <tr>
-            <td id="info">Fur Length:</td>
-              <td>{pet.furLength}</td>
-            </tr>
-            <tr>
-            <td id="info">Neutered:</td>
-              <td>
-                {pet.isNeutered === true && "yes"}
-                {pet.isNeutered === false && "no"}
-              </td>
-            </tr>
-            <tr>
-            <td id="info">Vaccination:</td>
-              <td>
-                {pet.isVaccinated === true && " yes"}
-                {pet.isVaccinated === false && " no"}
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td id="info">I'm a:</td>
+                <td>{pet.typeOfPet}</td>
+              </tr>
+              {pet.typeOfPet === "cat" ? (
+                <CatDetails catRace={pet.catRace} />
+              ) : (
+                <DogDetails dogRace={pet.dogRace} size={pet.size} />
+              )}
+              <tr>
+                <td id="info">Sex:</td>
+                <td>{pet.sex}</td>
+              </tr>
+              <tr>
+                <td id="info">Birthday:</td>
+                <td>{pet.birthday}</td>
+              </tr>
+              <tr>
+                <td id="info">Age Category:</td>
+                <td>{pet.ageType}</td>
+              </tr>
+              <tr>
+                <td id="info">Weight:</td>
+                <td>{pet.weight}</td>
+              </tr>
+              <tr>
+                <td id="info">Pet Friendly:</td>
+                <td>{pet.petFriendly}</td>
+              </tr>
+              <tr>
+                <td id="info">Kid Friendly:</td>
+                <td>{pet.kidFriendly}</td>
+              </tr>
+              <tr>
+                <td id="info">Fur Length:</td>
+                <td>{pet.furLength}</td>
+              </tr>
+              <tr>
+                <td id="info">Neutered:</td>
+                <td>
+                  {pet.isNeutered === true && "yes"}
+                  {pet.isNeutered === false && "no"}
+                </td>
+              </tr>
+              <tr>
+                <td id="info">Vaccination:</td>
+                <td>
+                  {pet.isVaccinated === true && " yes"}
+                  {pet.isVaccinated === false && " no"}
+                </td>
+              </tr>
+            </tbody>
           </table>
 
           <h2>My story</h2>

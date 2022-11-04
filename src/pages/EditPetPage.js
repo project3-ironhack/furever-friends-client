@@ -134,7 +134,7 @@ function EditPetPage(props) {
       <h3>Edit a pet Profile</h3>
  
       <form onSubmit={handleFormSubmit}>
-        <label>Pet Name*:</label>
+        <label className="required-field">:</label>
         <input
           type="text"
           name="petName"
@@ -149,9 +149,9 @@ function EditPetPage(props) {
             value={image}
             onChange={(e) => handleFileUpload(e)}
           />
-        <div id="radios">
+        <div id="radios" className="required-field">
           Choose an animal*
-          <label>Cat</label>
+          <p><label>Cat</label></p>
             <input 
               type="radio"
               name="typeOfPet"
@@ -179,7 +179,7 @@ function EditPetPage(props) {
             setSize={setSize}
           />
         }
-        <label>Sex*:</label>
+        <label className="required-field">Sex*:</label>
           <select
             id="sex"
             onChange={(e) => setSex(e.target.value)}
@@ -188,7 +188,7 @@ function EditPetPage(props) {
               <option value="male">male</option>
             </select>
 
-        <label>Age group*:</label>
+        <label className="required-field">Age group*:</label>
           <select
             id="ageType"
             onChange={(e) => setAgeType(e.target.value)}
@@ -283,7 +283,7 @@ function EditPetPage(props) {
             onChange={(e) => setLocation(e.target.value)}
           />
 
-        <label>My Story*:</label>
+        <label className="required-field">My Story*:</label>
         <textarea
           name="description"
           placeholder="please describe the pet and their story"
@@ -292,11 +292,11 @@ function EditPetPage(props) {
         />
  
         <button type="submit">Update Pet</button>
-        <p>* are required fields for the form.</p>
+        <p className="required-field">* are required fields for the form.</p>
 
         
       </form>
-      <button onClick={deletePet}>Delete Pet</button>
+      <button className="delete" onClick={deletePet}>Delete Pet</button>
     </div>
   );
 }

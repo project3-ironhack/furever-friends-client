@@ -23,7 +23,7 @@ function AddCat(props) {
 
   return (
     <div>
-    <label htmlFor="catRace">Cat breed</label>
+    <p><label htmlFor="catRace">Cat breed</label></p>
       <select id="catRace" onChange={handleCatRace}>
       <option value="">--Please choose an option--</option>
         { catRaces !== null && catRaces.map((item) => 
