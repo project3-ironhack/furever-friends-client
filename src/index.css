@@ -57,6 +57,10 @@ nav {
   font-family: 'Henny Penny', cursive;
 }
 
+.radio-signup{
+  text-align: center;
+}
+
 .login { 
  border: 1px solid #551a8b;
  padding: 16px 32px;
@@ -99,102 +103,19 @@ nav {
 	}
 }
 
+.association{
+text-align: center;
+}
 
+.adopter{
+text-align: center;
+}
 
+ 
 
-/* body {
-  margin: 0;
-}
- 
-a {
-  list-style: none;
-  color: black;
-}
- 
-button,
-select {
-  padding: 5px 10px;
-  min-width: 50px;
-  margin: 5px;
-  font-size: 18px;
-}
- 
-label {
-  width: 200px;
-  display: block;
-}
- 
-input,
-textarea {
-  width: 200px;
-  padding: 10px;
-  display: inline-block;
-  margin: 10px;
-}
- 
-.Navbar {
-  background: #515f7d;
-  color: white;
-  padding: 0px 20px;
-  box-shadow: 0px 1px 2px gray;
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 5px;
-}
- 
-.Navbar li {
-  list-style: none;
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-} */
- 
-.card {
-  width: 400px;
-  padding: 10px;
-  box-shadow: 0px 2px 3px grey;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background: #94a7c8;
-  border-radius: 4px;
-}
- 
-.PetCard h3::after {
-  content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
-  margin-left: 5px;
-}
- 
-.EditPetPage,
-.AddPet,
-.AddTask {
-  background: #f9eec3;
-  border: 1px solid grey;
-  box-shadow: 0px 2px 3px grey;
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 4px;
-}
- 
-.EditPetPage {
-  background-color: rgb(239, 196, 88);
-}
- 
-.EditPetPage form,
-.AddTask form,
-.AddPet form {
-  display: flex;
+.center{
+  display: flex; 
   flex-direction: column;
   align-items: center;
-}
- 
-.AddTask button,
-.AddPet button {
-  display: block;
-}
- 
-.TaskCard {
-  background-color: #dfeef9;
+
 }

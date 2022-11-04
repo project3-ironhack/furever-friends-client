@@ -130,9 +130,9 @@ function SignupPage(props) {
       </div>
       </div>
 
-      <h3>Are you a potential adopter or an association?</h3>
+      <h3 className="radio-signup">Are you a potential adopter or an association?</h3>
       <div className="row">
-      <div className="column">
+      <div className="column adopter" >
       <div id="radios">
           <label>Adopter</label>
             <input 
@@ -142,7 +142,7 @@ function SignupPage(props) {
               onChange={(e) => setType('adopter')}
             />
           </div>
-          <div className="column">
+          <div className="column association">
             <label>Association</label>
             <input
               type="radio" 
@@ -174,14 +174,16 @@ function SignupPage(props) {
             setImage={setImage}
           />} 
 
+        <div className="center">
         <button type="submit" className="submit-signup">Sign up</button>
         <p className="required-field">* are required fields for the form.</p>
+        </div>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p className="already">Already have an account?</p>
-      <Link to={"/login"}>Login</Link>
+      <p className="already">Already have an account? <span><Link to={"/login"}>Login</Link></span>  </p>
+     
     </div>
   );
 }

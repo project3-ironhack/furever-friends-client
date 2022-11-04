@@ -41,16 +41,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
   }
 
   .submit-login{
     border:none;
     padding: 10px 20px;
-    background: linear-gradient(
-        130deg,
-        #a8a7f3,
-         #8a87ea
-    );
+    background:#a8a7f3;
+       
     color:#ffffff;
     border-radius: 3px;
+    cursor: pointer;
 }
