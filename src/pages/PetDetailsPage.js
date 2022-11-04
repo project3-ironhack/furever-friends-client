@@ -4,8 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import CatDetails from "../components/CatDetails";
 import DogDetails from "../components/DogDetails";
 import "./PetDetails.css";
-import "../components/CatDetails.css";
-import "../components/DogDetails.css";
 
 function PetDetailsPage(props) {
   const [pet, setPet] = useState(null);

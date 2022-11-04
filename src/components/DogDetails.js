@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import './DogDetails.css'
 
 function DogDetails(props) {
   const [dog, setDog] = useState(null);
