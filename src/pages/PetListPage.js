@@ -28,7 +28,7 @@ function PetListPage() {
 
   return (
     <div className="PetListPage">
-     <h1>Pet List Page</h1>
+     <h1>Look for your pet</h1>
 
       { pets.map((pet) => (
         <PetCard key={pet._id} {...pet} />

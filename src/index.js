@@ -6,6 +6,7 @@ import './signup.css';
 import './addadopter.css';
 import './addassociation.css';
 import './login.css';
+import './petlistpage.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

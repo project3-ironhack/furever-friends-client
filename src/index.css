@@ -119,3 +119,55 @@ text-align: center;
   align-items: center;
 
 }
+
+
+
+
+
+
+
+.card {
+  width: 400px;
+  padding: 10px;
+  box-shadow: 0px 2px 3px grey;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background: #94a7c8;
+  border-radius: 4px;
+}
+ 
+.PetCard h3::after {
+  content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
+  margin-left: 5px;
+}
+ 
+.EditPetPage,
+.AddPet
+{
+  background: #f9eec3;
+  border: 1px solid grey;
+  box-shadow: 0px 2px 3px grey;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+}
+ 
+.EditPetPage {
+  background-color: rgb(226, 210, 172);
+}
+ 
+.EditPetPage form,
+.AddPet form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+
+.AddPet button {
+  display: block;
+}
+ 
