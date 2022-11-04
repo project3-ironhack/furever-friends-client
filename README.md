@@ -40,11 +40,12 @@ npm i react-router-dom
 Environment variables should be the following:
 
 ```
-PORT=                   // The port where you'll run the front-end.
-REACT_APP_API_URL       // API server
+# PORT=
+The port where you'll run the front-end. 
+# REACT_APP_API_URL
+API server
 
 ```
-
 # Setup
 
 If you don't want to have to run everything yourself on your computer, you can take a look at our site [here](https://fureverfriends.netlify.app/).
