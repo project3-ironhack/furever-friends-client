@@ -181,3 +181,7 @@ h1 {
 	padding: 0.5em;
 }
  
+#cover img {
+	width: 100%;
+	margin: auto 0;
+}
