@@ -36,6 +36,7 @@ npm i axios
 
 # react router dom
 npm i react-router-dom
+```
 
 Environment variables should be the following:
 
@@ -44,7 +45,6 @@ Environment variables should be the following:
 The port where you'll run the front-end. 
 # REACT_APP_API_URL
 API server
-
 ```
 # Setup
 
