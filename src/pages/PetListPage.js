@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import './PetList.css';
 
 import PetCard from "../components/PetCard";
 
@@ -28,7 +29,6 @@ function PetListPage() {
 
   return (
     <div className="PetListPage">
-     <h1>Look for your pet</h1>
 
       { pets.map((pet) => (
         <PetCard key={pet._id} {...pet} />
