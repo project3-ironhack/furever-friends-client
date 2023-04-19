@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 // Components
 import Navbar from "./components/Navbar"; 
+import Footer from "./components/Footer";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from './components/IsAnon';
 
@@ -20,7 +21,8 @@ import AddPetPage from "./pages/AddPetPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="page-container">
+    <div className="content-wrap">
     <Navbar/>
 
     <Routes>
@@ -35,9 +37,10 @@ function App() {
       <Route path="/signup" element={ <IsAnon><SignupPage /></IsAnon> } />
       <Route path="/login" element={ <IsAnon><LoginPage /></IsAnon> } />
 
-    </Routes> 
+    </Routes>
+    </div>
 
-      
+    <Footer />
     </div>
   );
 }

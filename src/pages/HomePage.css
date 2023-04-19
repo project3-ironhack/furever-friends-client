@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@300;400;500;600;700;900&display=swap'); 
+
+
+.home {
+  display: flex;
+  height: 100vh;
+}
+
+.home {
+  --bg-image: url(../../public/images/close-up-young-woman-kissing-cute-cat.jpg); 
+  --bg-image-opacity: 0.75;
+  
+  position: relative;
+  isolation: isolate;
+}
+
+.home::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    
+    opacity: var(--bg-image-opacity);
+
+    background-image: var(--bg-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.home-title{
+font-size: 3rem;
+color: var(--secondaryColor);
+font-family: 'Mada', sans-serif;
+font-weight: 600;
+}
+
+.home-p{
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: var(--textColor);
+}
+
+.home-container{
+    max-width: 1240px;
+    margin: auto;
+}
+
+.home .home-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.home .home-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+
+.home-button{
+    padding: .7rem 1.5rem;
+    margin: 1rem 0;
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--secondaryColor);
+    color: var(--mainColor);
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    cursor: pointer;
+	border-radius: 50px;
+}
+
+.home-button:hover{
+    background-color: transparent;
+    border: 2px solid var(--secondaryColor);
+    color: var(--textColor)
+}
+
+@media screen and (max-width: 1024px){
+    .home-title {
+        font-size: 2rem;
+    }
+
+    .home-p{
+        font-size: 1rem;
+    }
+
+    .home-button{
+        padding: .6rem 1.3rem;
+        margin: .8rem 0;
+        background-color: var(--secondaryColor);
+        border: 2px solid var(--secondaryColor);
+        color: var(--mainColor);
+        font-size: .8rem;
+        font-weight: 800;
+        display: flex;
+    }
+    
+    .home-button:hover{
+        background-color: transparent;
+        border: 2px solid var(--secondaryColor);
+        color: var(--textColor)
+    }
+}
+
+

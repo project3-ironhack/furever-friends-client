@@ -1,0 +1,16 @@
+.footer{
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: var(--secondaryColor);
+    color: var(--mainColor);
+    z-index: 9999;
+    padding-top: 3em;
+}
+
+.footer-content{
+    text-align: center;
+}
+

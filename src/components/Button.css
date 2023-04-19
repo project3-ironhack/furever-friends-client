@@ -1,0 +1,20 @@
+
+.btn{
+padding: 8px 20px;
+border-radius: 50px;
+outline: none;
+border: none;
+font-size: 18px;
+color: var(--mainColor);
+cursor: pointer;
+background-color: var(--secondaryColor)
+}
+
+.btn:hover{
+padding: 6px 18px;
+transition: all 0.3 ease-out;
+background-color: transparent;
+color: var(--secondaryColor);
+border-radius: 50px;
+border: 2px solid var(--secondaryColor)
+}

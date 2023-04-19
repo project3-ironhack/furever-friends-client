@@ -1,67 +1,78 @@
-import { useRef } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Button } from './Button';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-import { useContext } from "react";                     
-import { AuthContext } from "../context/auth.context"; 
- 
+import { useContext } from 'react';
+import { AuthContext } from '../context/auth.context';
+
+
 function Navbar() {
 
   // Subscribe to the AuthContext to gain access to
   // the values from AuthContext.Provider `value` prop
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext); 
 
-  const navRef = useRef();
+  const [click, setClick] = useState(false);
 
-	const showNavbar = () => {
-		navRef.current.classList.toggle("responsive_nav");
-	};
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
-	return (
-		<header>
-      <Link to="/">
-        <h1 className="logo">Furever Friends</h1>
-      </Link>
+  return (
+    <>
+      <nav className='navbar'>
+        <Link to='/' className="navbar-logo">
+          Furever Friends
+        </Link>
+        <div className='menu-icon' onClick={handleClick}>
+          <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
+        </div>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              Home
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link to='/pets' className='nav-links' onClick={closeMobileMenu}>
+              Pets for adoption
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link to='/pets/add-pet' className='nav-links' onClick={closeMobileMenu}>
+              Place an add
+            </Link>
+          </li>
 
-			<nav ref={navRef}>
-      <Link to="/">
-        Home
-      </Link>
-      <Link to="/pets">
-       Pets
-      </Link>
-      <Link to="/pets/add-pet">
-        Add pet
-      </Link>
+           {/*    If login, button logout showing  */}
+          {isLoggedIn && (
+            <>      
+              <button onClick={logOutUser}>Logout</button>
+              <span>{user && user.name}</span>
+            </>
+          )}
 
-        {/*    If login, button logout showing  */}
-        {isLoggedIn && (
-        <>      
-          <button onClick={logOutUser}>Logout</button>
-          <span>{user && user.name}</span>
-        </>
-      )}
- 
-        {/*    If logout, button login and Signup showing  */}
-      {!isLoggedIn && (
-        <>
-          <Link to="/signup"> Sign Up </Link>
-          <Link to="/login"  className="login"> Login </Link>
-        </>
-      )}
+           {/*    If logout, button login and Signup showing  */}
+            {!isLoggedIn && (
+              <>
+              <li className='nav-item'>
+              <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
+                Login
+              </Link>
+              </li>
+              <li className='nav-item'>
+            <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
+              Sign Up
+            </Link>
+          </li>
+              </>
+            )}
+        </ul>
+        <Button />
+      </nav>
 
-
-				<button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>
-			</nav>
-			<button className="nav-btn" onClick={showNavbar}>
-				<FaBars />
-			</button>
-		</header>
-	);
+    </>
+  )
 }
- 
+
 export default Navbar;

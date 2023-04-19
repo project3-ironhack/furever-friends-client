@@ -2,11 +2,10 @@ import { createRoot } from 'react-dom/client'
 import React from 'react';
 // import ReactDOM from 'react-dom/client';
 import './index.css';
-import './signup.css';
-import './addadopter.css';
-import './addassociation.css';
-import './login.css';
-import './petlistpage.css'
+import './pages/Signup.css';
+import './components/AddAdopter.css';
+import './components/AddAssociation.css';
+import './pages/Login.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

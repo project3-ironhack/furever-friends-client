@@ -68,10 +68,10 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="container">
-      <h1 className="signup-title">Sign up</h1>
 
-      <form onSubmit={handleSignupSubmit}>
+    <div className="signup-page">
+      <form onSubmit={handleSignupSubmit} className="signup-form">
+      <p className="signup-title">Sign Up</p>
       <div className="row">
       <div className="column">
       <label>Name*:</label>
@@ -178,11 +178,12 @@ function SignupPage(props) {
         <button type="submit" className="submit-signup">Sign up</button>
         <p className="required-field">* are required fields for the form.</p>
         </div>
+        <p className="already">Already have an account? <span><Link to={"/login"}>Login</Link></span>  </p>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p className="already">Already have an account? <span><Link to={"/login"}>Login</Link></span>  </p>
+      
      
     </div>
   );
