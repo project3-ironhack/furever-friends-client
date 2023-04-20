@@ -8,7 +8,7 @@
 }
 
 .home {
-  --bg-image: url(../../public/images/close-up-young-woman-kissing-cute-cat.jpg); 
+  --bg-image: url(../images/close-up-young-woman-kissing-cute-cat.jpg); 
   --bg-image-opacity: 0.75;
   
   position: relative;

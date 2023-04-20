@@ -32,7 +32,7 @@ function PetListPage() {
 
       { pets.map((pet) => (
         <PetCard key={pet._id} {...pet} />
-      ))}     
+      ))}    
           
     </div>
   );

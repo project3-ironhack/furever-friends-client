@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from './components/IsAnon';
 
+
 // Pages
 import HomePage from "./pages/HomePage"; 
 import PetListPage from "./pages/PetListPage";

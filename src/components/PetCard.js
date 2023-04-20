@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import './PetCard.css';
-import CatDetails from "./CatDetails";
-import DogDetails from "./DogDetails";
+// import CatDetails from "./CatDetails";
+// import DogDetails from "./DogDetails";
 import Image from "../dog-cat.png";
 
  
@@ -31,8 +31,6 @@ function PetCard ( { petName,location, _id, ageType, sex, weight } ) {
       <div class="profile__cta"><Link to={`/pets/${_id}`} class="button">Adopt {petName}</Link></div>
     </div>
     </div>
-    
-  
     
   );
 }
